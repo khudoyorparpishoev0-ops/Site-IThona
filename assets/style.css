@@ -186,16 +186,42 @@ section{padding:88px 0}
 
 /* ---------- Partners ---------- */
 .partners-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;
-  border:1px solid var(--gray-line);border-radius:var(--radius);overflow:hidden}
-.partner{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--gray-line);border-radius:var(--radius);
+  /* overflow:visible — чтобы tooltip мог выходить за пределы верхнего ряда */
+  overflow:visible}
+.partner{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
   background:#fff;border-right:1px solid var(--gray-line);border-bottom:1px solid var(--gray-line);
   padding:22px 26px;transition:.3s var(--ease)}
+/* скруглить внешние углы сетки (раньше это делал overflow:hidden) */
+.partners-grid .partner:first-child{border-top-left-radius:var(--radius)}
+.partners-grid .partner:nth-child(6){border-top-right-radius:var(--radius)}
+.partners-grid .partner:nth-last-child(6){border-bottom-left-radius:var(--radius)}
+.partners-grid .partner:last-child{border-bottom-right-radius:var(--radius)}
+.partner a{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
 .partner img{max-height:40px;max-width:100%;width:auto;object-fit:contain;
   filter:grayscale(1);opacity:.55;transition:filter .3s var(--ease),opacity .3s var(--ease)}
 /* фон ячейки всегда чисто-белый (#fff), чтобы белая подложка логотипов сливалась;
    ховер-акцент даёт только сам логотип (grayscale → цвет) */
 .partner:hover{background:#fff}
 .partner:hover img{filter:grayscale(0);opacity:1}
+
+/* ---------- Tooltip партнёров ---------- */
+.partner::before,.partner::after{
+  position:absolute;left:50%;opacity:0;visibility:hidden;pointer-events:none;z-index:6;
+  transition:opacity .22s var(--ease),transform .22s var(--ease)}
+.partner::after{
+  content:attr(data-tip);bottom:100%;margin-bottom:9px;
+  transform:translateX(-50%) translateY(5px);
+  background:var(--graphite);color:#fff;font-size:12.5px;font-weight:500;line-height:1.35;
+  padding:8px 12px;border-radius:9px;width:max-content;max-width:190px;text-align:center;
+  box-shadow:0 10px 24px rgba(11,61,42,.22)}
+.partner::before{
+  content:"";bottom:100%;margin-bottom:-2px;
+  transform:translateX(-50%) translateY(5px);
+  border:6px solid transparent;border-top-color:var(--graphite)}
+.partner:hover::after,.partner:focus-within::after,
+.partner:hover::before,.partner:focus-within::before{
+  opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
 
 /* ---------- Form ---------- */
 .cta-band{background:var(--graphite);color:#fff}
@@ -250,7 +276,11 @@ form.appeal textarea{resize:vertical;min-height:100px}
   .about-grid,.form-grid{grid-template-columns:1fr;gap:36px}
   .stats .grid-4{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .partners-grid{grid-template-columns:repeat(3,1fr)}
+  /* планшет/мобайл: чистые углы за счёт клиппинга, tooltip отключаем (нет hover) */
+  .partners-grid{grid-template-columns:repeat(3,1fr);overflow:hidden}
+  .partners-grid .partner:first-child,.partners-grid .partner:nth-child(6),
+  .partners-grid .partner:nth-last-child(6),.partners-grid .partner:last-child{border-radius:0}
+  .partner::before,.partner::after{display:none}
   .solution,.solution:nth-child(even){grid-template-columns:1fr;direction:ltr}
   .hero-strip{grid-template-columns:repeat(2,1fr)}
 }
