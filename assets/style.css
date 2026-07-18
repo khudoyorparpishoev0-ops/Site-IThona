@@ -187,9 +187,14 @@ section{padding:88px 0}
 .partners-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;
   border:1px solid var(--gray-line);border-radius:var(--radius);overflow:hidden}
 .partner{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;
-  border-right:1px solid var(--gray-line);border-bottom:1px solid var(--gray-line);
-  font-weight:700;color:#aeb5b1;filter:grayscale(1);transition:.3s var(--ease);font-size:17px}
-.partner:hover{filter:grayscale(0);color:var(--green);background:var(--gray)}
+  background:#fff;border-right:1px solid var(--gray-line);border-bottom:1px solid var(--gray-line);
+  padding:22px 26px;transition:.3s var(--ease)}
+.partner img{max-height:40px;max-width:100%;width:auto;object-fit:contain;
+  filter:grayscale(1);opacity:.55;transition:filter .3s var(--ease),opacity .3s var(--ease)}
+/* фон ячейки всегда чисто-белый (#fff), чтобы белая подложка логотипов сливалась;
+   ховер-акцент даёт только сам логотип (grayscale → цвет) */
+.partner:hover{background:#fff}
+.partner:hover img{filter:grayscale(0);opacity:1}
 
 /* ---------- Form ---------- */
 .cta-band{background:var(--graphite);color:#fff}
@@ -256,6 +261,8 @@ form.appeal textarea{resize:vertical;min-height:100px}
     background:#fff;padding:24px;gap:18px;border-bottom:1px solid var(--gray-line);box-shadow:var(--shadow)}
   .grid-3,.grid-2{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:repeat(2,1fr)}
+  .partner{padding:16px 18px}
+  .partner img{max-height:34px}
   .footer-grid{grid-template-columns:1fr}
   .hero{padding:140px 0 80px}
   .hero-strip{grid-template-columns:1fr 1fr}
