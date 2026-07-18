@@ -105,7 +105,25 @@ section{padding:88px 0}
     linear-gradient(90deg,rgba(20,148,71,.10) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(circle at 70% 30%,#000,transparent 75%)}
 .hero-content{position:relative;max-width:780px}
-.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+/* ---- фоновый декор в боковых зонах hero ---- */
+.hero-decor{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  /* мягкие размытые зелёные блики по бокам */
+  background:
+    radial-gradient(360px 360px at 3% 66%, rgba(47,206,116,.12), transparent 68%),
+    radial-gradient(460px 460px at 99% 18%, rgba(20,148,71,.16), transparent 70%),
+    radial-gradient(300px 300px at 93% 96%, rgba(47,206,116,.08), transparent 70%)}
+/* тонкая сетка-грид: видна по краям, гаснет к центру (не мешает тексту/графике) */
+.hero-decor::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(47,206,116,.16) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(47,206,116,.16) 1px,transparent 1px);
+  background-size:46px 46px;opacity:.55;
+  -webkit-mask-image:linear-gradient(90deg,#000,transparent 27%,transparent 73%,#000);
+  mask-image:linear-gradient(90deg,#000,transparent 27%,transparent 73%,#000)}
+/* «созвездия» узлов сети в левой/правой зонах */
+.hero-deco{position:absolute;top:50%;transform:translateY(-50%);height:80%;width:auto;opacity:.5}
+.hero-deco--l{left:1.4%}
+.hero-deco--r{right:1.4%}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;pointer-events:none}
 .hero-art{width:100%;max-width:560px;height:auto;
   animation:hero-float 6s ease-in-out infinite;will-change:transform}
@@ -306,10 +324,14 @@ form.appeal textarea{resize:vertical;min-height:100px}
   .hero-grid{grid-template-columns:1fr}
   .hero-visual{display:none}
   .hero-content{max-width:none}
+  /* декор упрощаем: убираем боковые «созвездия», оставляем мягкие блики */
+  .hero-deco{display:none}
   .hero-strip{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:680px){
   section{padding:60px 0}
+  /* на мобильном фоновый декор hero полностью скрыт */
+  .hero-decor{display:none}
   .nav,.header-right .lang,.header-right .btn{display:none}
   .header-right .burger{display:flex}
   .nav.open{display:flex;position:fixed;top:62px;left:0;right:0;flex-direction:column;
