@@ -24,7 +24,7 @@ const I18N = {
     _label: "Русский",
     _hreflang: "ru",
     nav: { home:"Главная", about:"О компании", services:"Услуги", solutions:"Решения",
-           projects:"Проекты", partners:"Партнёры", contacts:"Контакты" },
+           partners:"Партнёры", contacts:"Контакты" },
     cta_apply: "Оставить заявку",
     lang_title: "Язык",
 
@@ -32,7 +32,7 @@ const I18N = {
     hero_title_1: "IT-HONA — ", hero_title_2: "системный IT-интегратор",
     hero_lead: "Проектируем, внедряем и сопровождаем комплексные инженерные и IT-системы для бизнеса и крупных объектов.",
     hero_slogan: "Интегрируем технологии. Создаём надёжную инфраструктуру.",
-    hero_btn1: "Получить консультацию", hero_btn2: "Смотреть проекты",
+    hero_btn1: "Получить консультацию", hero_btn2: "Смотреть решения",
     stat_years:"лет на рынке", stat_projects:"реализованных проектов",
     stat_engineers:"инженеров в команде", stat_support:"техническая поддержка",
 
@@ -117,7 +117,6 @@ const I18N = {
       net:"Сети", iptv:"IPTV", access:"Контроль доступа", wifi:"Wi-Fi", scs:"СКС", server:"Серверная",
       dispatch:"Диспетчеризация", secnet:"Защищённые сети", notify:"Оповещение", security:"Безопасность",
       infra:"Инженерная инфраструктура" },
-    loc:{ dushanbe:"Душанбе", khujand:"Худжанд", bokhtar:"Бохтар" },
 
     // Страница «Услуги»
     sp:{ h1:"Услуги полного цикла", eyebrow:"Что мы делаем", h2:"От проекта до сопровождения",
@@ -154,18 +153,6 @@ const I18N = {
       s5_t:"Торговые комплексы", s5_d:"Видеонаблюдение, оповещение, сети и инженерные системы для торговых объектов.",
       s6_t:"Медицинские учреждения", s6_d:"IT-инфраструктура, контроль доступа и системы безопасности для клиник и больниц." },
 
-    // Страница «Проекты»
-    pp:{ h1:"Реализованные проекты", eyebrow:"Проекты", h2:"Объекты, которые мы построили",
-      p:"Комплексные инженерные и IT-системы на реальных объектах.", view:"Посмотреть проект",
-      lbl_bank:"Банк", lbl_hotel:"Гостиница", lbl_bc:"Бизнес-центр", lbl_gov:"Госучреждение", lbl_dc:"ЦОД", lbl_mall:"Торговый центр",
-      p1_t:"Центральный офис банка", p1_s:"Видеонаблюдение · СКУД · Электронная очередь",
-      p2_t:"Гостиничный комплекс", p2_s:"Сети · IPTV · Контроль доступа",
-      p3_t:"Бизнес-центр класса А", p3_s:"СКС · Серверная · Видеонаблюдение",
-      p4_t:"Административное здание", p4_s:"Защищённые сети · СКУД",
-      p5_t:"Серверный центр", p5_s:"Серверная · Инженерная инфраструктура",
-      p6_t:"Торговый комплекс", p6_s:"Видеонаблюдение · Оповещение · Сети",
-      st_projects:"Реализованных проектов", st_objects:"Объектов на сопровождении", cities:"Городов присутствия", years_exp:"Лет опыта" },
-
     // Страница «Партнёры»
     prp:{ h1:"Партнёры и производители", eyebrow:"Партнёры", h2:"Работаем с ведущими вендорами",
       p:"Поставляем сертифицированное оборудование от проверенных производителей.",
@@ -183,7 +170,7 @@ const I18N = {
     _label: "Тоҷикӣ",
     _hreflang: "tg",
     nav: { home:"Асосӣ", about:"Дар бораи ширкат", services:"Хизматрасониҳо", solutions:"Ҳалҳо",
-           projects:"Лоиҳаҳо", partners:"Шарикон", contacts:"Тамос" },
+           partners:"Шарикон", contacts:"Тамос" },
     cta_apply: "Дархост гузоштан",
     lang_title: "Забон",
 
@@ -191,7 +178,7 @@ const I18N = {
     hero_title_1: "IT-HONA — ", hero_title_2: "интегратори системавии IT",
     hero_lead: "Мо системаҳои муҳандисӣ ва IT-и мукаммалро барои тиҷорат ва иншооти калон тарҳрезӣ, ҷорӣ ва дастгирӣ мекунем.",
     hero_slogan: "Технологияҳоро муттаҳид мекунем. Инфрасохтори боэътимод месозем.",
-    hero_btn1: "Машварат гирифтан", hero_btn2: "Дидани лоиҳаҳо",
+    hero_btn1: "Машварат гирифтан", hero_btn2: "Дидани ҳалҳо",
     stat_years:"сол дар бозор", stat_projects:"лоиҳаҳои иҷрошуда",
     stat_engineers:"муҳандис дар даста", stat_support:"дастгирии техникӣ",
 
@@ -274,7 +261,6 @@ const I18N = {
       net:"Шабакаҳо", iptv:"IPTV", access:"Назорати дастрасӣ", wifi:"Wi-Fi", scs:"СКС", server:"Утоқи серверӣ",
       dispatch:"Диспетчеризатсия", secnet:"Шабакаҳои ҳифзшуда", notify:"Огоҳкунӣ", security:"Амният",
       infra:"Инфрасохтори муҳандисӣ" },
-    loc:{ dushanbe:"Душанбе", khujand:"Хуҷанд", bokhtar:"Бохтар" },
 
     sp:{ h1:"Хизматрасониҳои давраи пурра", eyebrow:"Мо чӣ кор мекунем", h2:"Аз лоиҳа то дастгирӣ",
       p:"Масъулияти ягона барои инфрасохтори муҳандисӣ ва IT-и иншооти шумо.",
@@ -308,17 +294,6 @@ const I18N = {
       s5_t:"Марказҳои савдо", s5_d:"Видеокузатувӣ, огоҳкунӣ, шабакаҳо ва системаҳои муҳандисӣ барои иншооти савдо.",
       s6_t:"Муассисаҳои тиббӣ", s6_d:"Инфрасохтори IT, назорати дастрасӣ ва системаҳои амниятӣ барои клиникаҳо ва беморхонаҳо." },
 
-    pp:{ h1:"Лоиҳаҳои иҷрошуда", eyebrow:"Лоиҳаҳо", h2:"Иншооте, ки мо сохтем",
-      p:"Системаҳои мукаммали муҳандисӣ ва IT дар иншооти воқеӣ.", view:"Дидани лоиҳа",
-      lbl_bank:"Бонк", lbl_hotel:"Меҳмонхона", lbl_bc:"Маркази тиҷоратӣ", lbl_gov:"Муассисаи давлатӣ", lbl_dc:"ЦОД", lbl_mall:"Маркази савдо",
-      p1_t:"Офиси марказии бонк", p1_s:"Видеокузатувӣ · СКУД · Навбати электронӣ",
-      p2_t:"Маҷмааи меҳмонхонавӣ", p2_s:"Шабакаҳо · IPTV · Назорати дастрасӣ",
-      p3_t:"Маркази тиҷоратии синфи А", p3_s:"СКС · Утоқи серверӣ · Видеокузатувӣ",
-      p4_t:"Бинои маъмурӣ", p4_s:"Шабакаҳои ҳифзшуда · СКУД",
-      p5_t:"Маркази серверӣ", p5_s:"Утоқи серверӣ · Инфрасохтори муҳандисӣ",
-      p6_t:"Маҷмааи савдо", p6_s:"Видеокузатувӣ · Огоҳкунӣ · Шабакаҳо",
-      st_projects:"Лоиҳаҳои иҷрошуда", st_objects:"Иншоот дар дастгирӣ", cities:"Шаҳрҳои ҳузур", years_exp:"Соли таҷриба" },
-
     prp:{ h1:"Шарикон ва истеҳсолкунандагон", eyebrow:"Шарикон", h2:"Бо вендорҳои пешбар кор мекунем",
       p:"Таҷҳизоти сертификатсияшударо аз истеҳсолкунандагони боэътимод таъмин мекунем.",
       cta_h:"Мехоҳед шарик шавед?", cta_p:"Мо ба ҳамкорӣ бо истеҳсолкунандагон ва пудратчиён кушодаем.", cta_btn:"Бо мо тамос гиред" },
@@ -334,7 +309,7 @@ const I18N = {
     _label: "English",
     _hreflang: "en",
     nav: { home:"Home", about:"About", services:"Services", solutions:"Solutions",
-           projects:"Projects", partners:"Partners", contacts:"Contacts" },
+           partners:"Partners", contacts:"Contacts" },
     cta_apply: "Request a quote",
     lang_title: "Language",
 
@@ -342,7 +317,7 @@ const I18N = {
     hero_title_1: "IT-HONA — ", hero_title_2: "system IT integrator",
     hero_lead: "We design, deploy and support complex engineering and IT systems for business and large facilities.",
     hero_slogan: "We integrate technology. We build reliable infrastructure.",
-    hero_btn1: "Get a consultation", hero_btn2: "View projects",
+    hero_btn1: "Get a consultation", hero_btn2: "View solutions",
     stat_years:"years on the market", stat_projects:"completed projects",
     stat_engineers:"engineers on the team", stat_support:"technical support",
 
@@ -425,7 +400,6 @@ const I18N = {
       net:"Networks", iptv:"IPTV", access:"Access control", wifi:"Wi-Fi", scs:"Structured cabling", server:"Server room",
       dispatch:"Dispatching", secnet:"Secure networks", notify:"Notification", security:"Security",
       infra:"Engineering infrastructure" },
-    loc:{ dushanbe:"Dushanbe", khujand:"Khujand", bokhtar:"Bokhtar" },
 
     sp:{ h1:"Full-cycle services", eyebrow:"What we do", h2:"From design to support",
       p:"Single responsibility for your facility's engineering and IT infrastructure.",
@@ -458,17 +432,6 @@ const I18N = {
       s4_t:"Government institutions", s4_d:"Secure networks, access control and CCTV systems for government organizations.",
       s5_t:"Shopping complexes", s5_d:"CCTV, notification, networks and engineering systems for retail facilities.",
       s6_t:"Medical institutions", s6_d:"IT infrastructure, access control and security systems for clinics and hospitals." },
-
-    pp:{ h1:"Completed projects", eyebrow:"Projects", h2:"Facilities we have built",
-      p:"Comprehensive engineering and IT systems on real-world facilities.", view:"View project",
-      lbl_bank:"Bank", lbl_hotel:"Hotel", lbl_bc:"Business center", lbl_gov:"Government", lbl_dc:"Data center", lbl_mall:"Shopping mall",
-      p1_t:"Bank head office", p1_s:"CCTV · Access control · Electronic queue",
-      p2_t:"Hotel complex", p2_s:"Networks · IPTV · Access control",
-      p3_t:"Class A business center", p3_s:"Structured cabling · Server room · CCTV",
-      p4_t:"Administrative building", p4_s:"Secure networks · Access control",
-      p5_t:"Server center", p5_s:"Server room · Engineering infrastructure",
-      p6_t:"Shopping complex", p6_s:"CCTV · Notification · Networks",
-      st_projects:"Completed projects", st_objects:"Facilities under support", cities:"Cities of presence", years_exp:"Years of experience" },
 
     prp:{ h1:"Partners & manufacturers", eyebrow:"Partners", h2:"We work with leading vendors",
       p:"We supply certified equipment from trusted manufacturers.",
