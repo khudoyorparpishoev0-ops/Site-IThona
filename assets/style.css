@@ -122,11 +122,12 @@ section{padding:88px 0}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .card{background:#fff;border:1px solid var(--gray-line);border-radius:var(--radius);
   padding:34px 30px;box-shadow:var(--shadow-soft);transition:all .3s var(--ease)}
-.card:hover{border-color:var(--green);box-shadow:var(--shadow);background:#fbfefb;transform:translateY(-3px)}
-.card .ic{width:52px;height:52px;border-radius:14px;background:var(--gray);
+.card:hover{border-color:var(--green);box-shadow:var(--shadow);background:#fbfefb;transform:translateY(-4px)}
+.card .ic{width:52px;height:52px;border-radius:14px;background:#e7f6ed;
   display:flex;align-items:center;justify-content:center;margin-bottom:20px;transition:.3s var(--ease)}
-.card:hover .ic{background:#e7f6ed}
 .card .ic svg{stroke:var(--green)}
+.card:hover .ic{background:var(--green)}
+.card:hover .ic svg{stroke:#fff}
 .card h3{font-size:20px;margin-bottom:10px}
 .card p{font-size:15px;margin-bottom:18px}
 .card .more{color:var(--green);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px}
