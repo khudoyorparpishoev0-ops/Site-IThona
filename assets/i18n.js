@@ -81,7 +81,7 @@ const I18N = {
     // Панель связи
     widget_btn:"Связаться с менеджером",
     widget_title:"Связаться с менеджером",
-    widget_sub:"Выберите удобный способ связи или оставьте сообщение.",
+    widget_sub:"Выберите удобный способ связи.",
     status_online:"Менеджер онлайн",
     status_day:"Ответим в течение рабочего дня",
     status_closed:"Сейчас офис закрыт",
@@ -226,7 +226,7 @@ const I18N = {
 
     widget_btn:"Тамос бо менеҷер",
     widget_title:"Тамос бо менеҷер",
-    widget_sub:"Тарзи муносиби тамосро интихоб кунед ё паём гузоред.",
+    widget_sub:"Тарзи муносиби тамосро интихоб кунед.",
     status_online:"Менеҷер онлайн",
     status_day:"Дар давоми рӯзи корӣ ҷавоб медиҳем",
     status_closed:"Ҳоло офис баста аст",
@@ -365,7 +365,7 @@ const I18N = {
 
     widget_btn:"Contact a manager",
     widget_title:"Contact a manager",
-    widget_sub:"Choose a convenient contact method or leave a message.",
+    widget_sub:"Choose a convenient contact method.",
     status_online:"Manager online",
     status_day:"We'll reply within the business day",
     status_closed:"The office is currently closed",

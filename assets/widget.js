@@ -65,14 +65,10 @@
         ${optionRow(svg.wa,'opt_whatsapp')}
         ${optionRow(svg.tg,'opt_telegram')}
         ${optionRow(svg.call,'opt_call')}
-        ${optionRow(svg.write,'opt_write')}
-        ${optionRow(svg.callback,'opt_callback')}
       </div>`;
     body.querySelector('[data-act="opt_whatsapp"]').onclick = ()=> openWA();
     body.querySelector('[data-act="opt_telegram"]').onclick = ()=> openTG();
     body.querySelector('[data-act="opt_call"]').onclick = ()=> { location.href='tel:'+CONTACTS.phone; };
-    body.querySelector('[data-act="opt_write"]').onclick = ()=> renderForm();
-    body.querySelector('[data-act="opt_callback"]').onclick = ()=> renderCallback();
   }
 
   function backBtn(){ const d=D(); return `<button class="ith-back" type="button">${svg.arrow}<span>${d.back}</span></button>`; }
