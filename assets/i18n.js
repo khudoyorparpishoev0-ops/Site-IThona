@@ -29,7 +29,7 @@ const I18N = {
     lang_title: "Язык",
 
     hero_eyebrow: "Системный IT-интегратор полного цикла",
-    hero_title_1: "IT-HONA — ", hero_title_2: "системный IT-интегратор",
+    hero_title_1: "IT-HONA", hero_title_2: "системный IT-интегратор",
     hero_lead: "Проектируем, внедряем и сопровождаем комплексные инженерные и IT-системы для бизнеса и крупных объектов.",
     hero_slogan: "Интегрируем технологии. Создаём надёжную инфраструктуру.",
     hero_btn1: "Получить консультацию", hero_btn2: "Смотреть решения",
@@ -175,7 +175,7 @@ const I18N = {
     lang_title: "Забон",
 
     hero_eyebrow: "Интегратори системавии IT-и давраи пурра",
-    hero_title_1: "IT-HONA — ", hero_title_2: "интегратори системавии IT",
+    hero_title_1: "IT-HONA", hero_title_2: "интегратори системавии IT",
     hero_lead: "Мо системаҳои муҳандисӣ ва IT-и мукаммалро барои тиҷорат ва иншооти калон тарҳрезӣ, ҷорӣ ва дастгирӣ мекунем.",
     hero_slogan: "Технологияҳоро муттаҳид мекунем. Инфрасохтори боэътимод месозем.",
     hero_btn1: "Машварат гирифтан", hero_btn2: "Дидани ҳалҳо",
@@ -314,7 +314,7 @@ const I18N = {
     lang_title: "Language",
 
     hero_eyebrow: "Full-cycle system IT integrator",
-    hero_title_1: "IT-HONA — ", hero_title_2: "system IT integrator",
+    hero_title_1: "IT-HONA", hero_title_2: "system IT integrator",
     hero_lead: "We design, deploy and support complex engineering and IT systems for business and large facilities.",
     hero_slogan: "We integrate technology. We build reliable infrastructure.",
     hero_btn1: "Get a consultation", hero_btn2: "View solutions",

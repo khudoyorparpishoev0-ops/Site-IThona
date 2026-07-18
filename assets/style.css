@@ -127,7 +127,7 @@ section{padding:88px 0}
 .hero-deco .d-halo{transform-box:fill-box;transform-origin:center;animation:hero-halo 4.6s ease-out infinite}
 .hero-deco .d-node{animation:hero-spark 3.4s ease-in-out infinite}
 .hero-deco .d-flow{fill:none;stroke-dasharray:5 27;stroke-dashoffset:0;animation:hero-flow 3.6s linear infinite}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:36px;align-items:center}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:36px;align-items:center}
 .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;pointer-events:none}
 .hero-art{width:100%;max-width:560px;height:auto;
   animation:hero-float 6s ease-in-out infinite;will-change:transform}
@@ -154,8 +154,8 @@ section{padding:88px 0}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .hero-strip{position:relative;margin-top:64px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
   gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);overflow:hidden}
-.hero-strip div{background:rgba(11,61,42,.6);padding:30px 24px}
-.hero-strip .n{font-size:42px;font-weight:800;color:#fff;line-height:1}
+.hero-strip div{background:rgba(11,61,42,.6);padding:34px 28px}
+.hero-strip .n{font-size:46px;font-weight:800;color:#fff;line-height:1}
 .hero-strip .l{font-size:14px;color:rgba(255,255,255,.72);margin-top:10px}
 
 /* ---------- Services cards ---------- */
