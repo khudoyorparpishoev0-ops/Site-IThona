@@ -52,21 +52,80 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-content">
-    <span class="eyebrow" style="color:#2fce74" data-i18n="hero_eyebrow">Системный IT-интегратор полного цикла</span>
-    <h1><span data-i18n="hero_title_1">IT-HONA — </span><span class="accent" data-i18n="hero_title_2">системный IT-интегратор</span></h1>
-    <p class="lead" data-i18n="hero_lead">Проектируем, внедряем и сопровождаем комплексные инженерные и IT-системы для бизнеса и крупных объектов.</p>
-    <p class="slogan" data-i18n="hero_slogan">Интегрируем технологии. Создаём надёжную инфраструктуру.</p>
-    <div class="hero-actions">
-      <a href="contacts.html" class="btn btn-primary"><span data-i18n="hero_btn1">Получить консультацию</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="solutions.html" class="btn btn-ghost" data-i18n="hero_btn2">Смотреть решения</a>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="eyebrow" style="color:#2fce74" data-i18n="hero_eyebrow">Системный IT-интегратор полного цикла</span>
+      <h1><span data-i18n="hero_title_1">IT-HONA — </span><span class="accent" data-i18n="hero_title_2">системный IT-интегратор</span></h1>
+      <p class="lead" data-i18n="hero_lead">Проектируем, внедряем и сопровождаем комплексные инженерные и IT-системы для бизнеса и крупных объектов.</p>
+      <p class="slogan" data-i18n="hero_slogan">Интегрируем технологии. Создаём надёжную инфраструктуру.</p>
+      <div class="hero-actions">
+        <a href="contacts.html" class="btn btn-primary"><span data-i18n="hero_btn1">Получить консультацию</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="solutions.html" class="btn btn-ghost" data-i18n="hero_btn2">Смотреть решения</a>
+      </div>
+      <div class="hero-strip">
+        <div><div class="n" data-count="5">0</div><div class="l" data-i18n="stat_years">лет на рынке</div></div>
+        <div><div class="n" data-count="32" data-suffix="+">0</div><div class="l" data-i18n="stat_projects">реализованных проектов</div></div>
+        <div><div class="n" data-count="10" data-suffix="+">0</div><div class="l" data-i18n="stat_engineers">инженеров в команде</div></div>
+        <div><div class="n" data-count="24" data-suffix="/7">0</div><div class="l" data-i18n="stat_support">техническая поддержка</div></div>
+      </div>
     </div>
-    <div class="hero-strip">
-      <div><div class="n" data-count="5">0</div><div class="l" data-i18n="stat_years">лет на рынке</div></div>
-      <div><div class="n" data-count="32" data-suffix="+">0</div><div class="l" data-i18n="stat_projects">реализованных проектов</div></div>
-      <div><div class="n" data-count="10" data-suffix="+">0</div><div class="l" data-i18n="stat_engineers">инженеров в команде</div></div>
-      <div><div class="n" data-count="24" data-suffix="/7">0</div><div class="l" data-i18n="stat_support">техническая поддержка</div></div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg class="hero-art" viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Иллюстрация надёжной IT-инфраструктуры">
+        <!-- фоновые кольца -->
+        <circle cx="230" cy="230" r="205" stroke="rgba(47,206,116,.12)" stroke-width="1.5"/>
+        <circle cx="230" cy="230" r="152" stroke="rgba(47,206,116,.10)" stroke-width="1.5" stroke-dasharray="3 8"/>
+        <!-- соединительные линии от сервера к узлам -->
+        <g stroke="rgba(47,206,116,.45)" stroke-width="1.6" stroke-linecap="round">
+          <path d="M230 168 V120"/>
+          <path d="M284 232 L356 206"/>
+          <path d="M230 322 V372"/>
+          <path d="M176 252 L110 258"/>
+        </g>
+        <g fill="#2fce74">
+          <circle cx="230" cy="168" r="3.4"/>
+          <circle cx="284" cy="232" r="3.4"/>
+          <circle cx="230" cy="322" r="3.4"/>
+          <circle cx="176" cy="252" r="3.4"/>
+        </g>
+        <!-- Сервер / стойка (центр) -->
+        <g stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linejoin="round">
+          <rect x="178" y="168" width="104" height="154" rx="12" fill="rgba(255,255,255,.04)"/>
+          <rect x="192" y="184" width="76" height="30" rx="6"/>
+          <rect x="192" y="225" width="76" height="30" rx="6"/>
+          <rect x="192" y="266" width="76" height="30" rx="6"/>
+        </g>
+        <g fill="#2fce74">
+          <circle cx="205" cy="199" r="4"/>
+          <circle cx="205" cy="240" r="4"/>
+          <circle cx="205" cy="281" r="4"/>
+        </g>
+        <g stroke="rgba(47,206,116,.75)" stroke-width="2" stroke-linecap="round">
+          <path d="M225 199 h33"/>
+          <path d="M225 240 h33"/>
+          <path d="M225 281 h33"/>
+        </g>
+        <!-- Облако (сверху) -->
+        <path d="M203 118 a19 19 0 0 1 37 -7 a15 15 0 0 1 12 25 h-47 a14 14 0 0 1 -2 -18 z"
+              stroke="#7ff0aa" stroke-width="2" stroke-linejoin="round"/>
+        <!-- Wi-Fi (справа) -->
+        <g stroke="#7ff0aa" stroke-width="2" stroke-linecap="round">
+          <path d="M364 182 a28 28 0 0 1 44 0"/>
+          <path d="M373 193 a16 16 0 0 1 26 0"/>
+        </g>
+        <circle cx="386" cy="205" r="3.2" fill="#7ff0aa"/>
+        <!-- Щит безопасности (снизу) -->
+        <g stroke="#7ff0aa" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M230 374 l25 9 v15 c0 16 -11 26 -25 31 c-14 -5 -25 -15 -25 -31 v-15 z"/>
+          <path d="M220 405 l7 7 12 -13"/>
+        </g>
+        <!-- База данных (слева) -->
+        <g stroke="#7ff0aa" stroke-width="2" stroke-linecap="round">
+          <ellipse cx="86" cy="250" rx="22" ry="8"/>
+          <path d="M64 250 v27 c0 4 10 8 22 8 s22 -4 22 -8 v-27"/>
+          <path d="M64 264 c0 4 10 8 22 8 s22 -4 22 -8"/>
+        </g>
+      </svg>
     </div>
   </div>
 </section>
