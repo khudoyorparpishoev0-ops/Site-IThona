@@ -104,7 +104,7 @@ section{padding:88px 0}
   background-image:linear-gradient(rgba(20,148,71,.10) 1px,transparent 1px),
     linear-gradient(90deg,rgba(20,148,71,.10) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(circle at 70% 30%,#000,transparent 75%)}
-.hero-content{position:relative;max-width:none}
+.hero-content{position:relative;max-width:680px}
 /* ---- фоновый декор в боковых зонах hero ---- */
 .hero-decor{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
   /* мягкие размытые зелёные блики по бокам */
@@ -120,33 +120,22 @@ section{padding:88px 0}
   -webkit-mask-image:linear-gradient(90deg,#000,transparent 27%,transparent 73%,#000);
   mask-image:linear-gradient(90deg,#000,transparent 27%,transparent 73%,#000)}
 /* «созвездия» узлов сети в левой/правой зонах */
-.hero-deco{position:absolute;top:50%;transform:translateY(-50%);height:80%;width:auto;opacity:.5}
-.hero-deco--l{left:1.4%}
-.hero-deco--r{right:1.4%}
+.hero-deco{position:absolute;top:50%;transform:translateY(-50%);height:80%;width:auto;opacity:.62}
+.hero-deco--l{left:1.6%}
+/* правый декор увеличен, чтобы заполнить зону бывшей центральной графики */
+.hero-deco--r{right:1.5%;height:auto;width:clamp(340px,42%,520px)}
 /* оживление бокового декора — спокойное, приглушённое */
 .hero-deco .d-halo{transform-box:fill-box;transform-origin:center;animation:hero-halo 4.6s ease-out infinite}
 .hero-deco .d-node{animation:hero-spark 3.4s ease-in-out infinite}
 .hero-deco .d-flow{fill:none;stroke-dasharray:5 27;stroke-dashoffset:0;animation:hero-flow 3.6s linear infinite}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,.68fr);gap:36px;align-items:center}
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;pointer-events:none;
-  align-self:start;margin-top:-48px}
-.hero-art{width:100%;max-width:560px;height:auto;
-  animation:hero-float 6s ease-in-out infinite;will-change:transform}
-@keyframes hero-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
-/* пульсация узлов — расходящееся кольцо (ping) */
-.hero-art .halo{transform-box:fill-box;transform-origin:center;
-  animation:hero-halo 3.4s ease-out infinite}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr;align-items:center}
+/* keyframes анимаций бокового декора (пульс / мерцание / бегущий сигнал) */
 @keyframes hero-halo{0%{transform:scale(.5);opacity:.75}70%,100%{transform:scale(1.5);opacity:0}}
-/* мерцание светящихся точек на узлах */
-.hero-art .spark{animation:hero-spark 2.6s ease-in-out infinite}
 @keyframes hero-spark{0%,100%{opacity:1}50%{opacity:.35}}
-/* бегущий сигнал по линиям (data flow) */
-.hero-art .flow{stroke-dasharray:5 27;stroke-dashoffset:0;
-  animation:hero-flow 2.4s linear infinite}
 @keyframes hero-flow{to{stroke-dashoffset:-32}}
-/* уважать системную настройку «уменьшить движение» — отключаем всю анимацию */
+/* уважать системную настройку «уменьшить движение» — отключаем анимацию декора */
 @media(prefers-reduced-motion:reduce){
-  .hero-art,.hero-art *,.hero-decor *{animation:none!important}
+  .hero-decor *{animation:none!important}
 }
 .hero h1{color:#fff;font-size:clamp(34px,5vw,60px);font-weight:800;margin-bottom:22px}
 .hero h1 .accent{color:#2fce74}
