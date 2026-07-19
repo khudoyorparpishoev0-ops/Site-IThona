@@ -18,9 +18,13 @@
 <meta property="og:image" content="https://it-hona.tj/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/editorial.css?v=1">
 </head>
-<body>
+<body class="v2">
 
 <!-- HEADER -->
 <header class="header">
@@ -29,12 +33,13 @@
       <img src="assets/img/logo.svg" alt="IT-HONA" class="logo-img">
     </a>
     <nav class="nav">
-      <a href="index.html" class="active" data-i18n="nav.home">Главная</a>
-      <a href="about.html" data-i18n="nav.about">О компании</a>
-      <a href="services.html" data-i18n="nav.services">Услуги</a>
-      <a href="solutions.html" data-i18n="nav.solutions">Решения</a>      <a href="partners.html" data-i18n="nav.partners">Партнёры</a>
-      <a href="contacts.html" data-i18n="nav.contacts">Контакты</a>
-    
+      <a href="#top" class="active" data-i18n="nav.home">Главная</a>
+      <a href="#about" data-i18n="nav.about">О компании</a>
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#solutions" data-i18n="nav.solutions">Решения</a>
+      <a href="#partners" data-i18n="nav.partners">Партнёры</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+
       <div class="lang-mobile">
         <div class="lm-title" data-i18n="lang_title">Язык</div>
         <a data-lang="ru">RU</a>
@@ -44,306 +49,248 @@
     </nav>
     <div class="header-right">
       <div class="lang"><a data-lang="ru" class="on">RU</a><a data-lang="tj">TJ</a><a data-lang="en">EN</a></div>
-      <a href="contacts.html" class="btn btn-primary" data-i18n="cta_apply">Оставить заявку</a>
+      <a href="tel:+992889295555" class="header-phone">+992 88 929 5555</a>
       <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <span class="eyebrow" style="color:#2fce74" data-i18n="hero_eyebrow">Системный IT-интегратор полного цикла</span>
-      <h1><span data-i18n="hero_title_1">IT-HONA</span><br><span class="accent" data-i18n="hero_title_2">системный IT-интегратор</span></h1>
-      <p class="lead" data-i18n="hero_lead">Проектируем, внедряем и сопровождаем комплексные инженерные и IT-системы для бизнеса и крупных объектов.</p>
-      <p class="slogan" data-i18n="hero_slogan">Интегрируем технологии. Создаём надёжную инфраструктуру.</p>
-      <div class="hero-actions">
-        <a href="contacts.html" class="btn btn-primary"><span data-i18n="hero_btn1">Получить консультацию</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="solutions.html" class="btn btn-ghost" data-i18n="hero_btn2">Смотреть решения</a>
+<section class="ed-hero" id="top">
+  <div class="container ed-hero-grid">
+    <div class="ed-hero-left">
+      <div class="ed-eyebrow" data-i18n="v2_eyebrow">Системный IT-интегратор полного цикла · Душанбе</div>
+      <h1><span data-i18n="v2_hero_t1">Надёжная</span><br><span data-i18n="v2_hero_t2">инфраструктура</span><span class="dot">.</span></h1>
+      <p class="ed-lead" data-i18n="v2_hero_lead">Полный цикл: проектирование, поставка, монтаж и сопровождение инженерных и IT-систем для бизнеса и крупных объектов.</p>
+      <div class="ed-hero-actions">
+        <a href="#contacts" class="ed-btn"><span data-i18n="v2_btn_discuss">Обсудить проект</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#solutions" class="ed-link" data-i18n="hero_btn2">Смотреть решения</a>
       </div>
-      <div class="stats-panel stats-panel--hero reveal">
-        <div class="stats-grid">
-          <div class="stat-card" style="--d:.05s">
-            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-            <div class="stat-n"><span data-count="32" data-suffix="+">0</span></div>
-            <span class="stat-dash"></span>
-            <div class="stat-l" data-i18n="stat_projects">реализованных проектов</div>
-          </div>
-          <div class="stat-card" style="--d:.15s">
-            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <div class="stat-n"><span data-count="5">0</span></div>
-            <span class="stat-dash"></span>
-            <div class="stat-l" data-i18n="stat_years_work">лет успешной работы</div>
-          </div>
-          <div class="stat-card" style="--d:.25s">
-            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <div class="stat-n"><span data-count="50">0</span></div>
-            <span class="stat-dash"></span>
-            <div class="stat-l" data-i18n="stat_clients">постоянных клиентов</div>
-          </div>
-          <div class="stat-card" style="--d:.35s">
-            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H4a1 1 0 0 1-1-1v-6a9 9 0 0 1 18 0v6a1 1 0 0 1-1 1h-2a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span>
-            <div class="stat-n"><span data-count="24" data-suffix="/7">0</span></div>
-            <span class="stat-dash"></span>
-            <div class="stat-l" data-i18n="stat_support">техническая поддержка</div>
-          </div>
-        </div>
+      <div class="ed-stats">
+        <div class="ed-stat"><div class="n"><span data-count="32">0</span><span class="acc">+</span></div><div class="l" data-i18n="stat_projects">реализованных проектов</div></div>
+        <div class="ed-stat"><div class="n"><span data-count="50">0</span></div><div class="l" data-i18n="stat_clients">постоянных клиентов</div></div>
+        <div class="ed-stat"><div class="n"><span data-count="24">0</span><span class="acc">/7</span></div><div class="l" data-i18n="stat_support">техническая поддержка</div></div>
       </div>
+    </div>
+    <div class="ed-hero-media">
+      <img src="assets/img/hero.jpg" alt="Инфраструктура IT-HONA">
+      <div class="ed-hero-badge" data-i18n="v2_badge">Банки · Госсектор · Гостиницы · Бизнес-центры</div>
+      <div class="ed-hero-est">Est. 2021</div>
     </div>
   </div>
 </section>
 
-<!-- QUICK DIRECTIONS -->
-<section class="quick">
+<!-- 01 НАПРАВЛЕНИЯ -->
+<section class="ed-dirs">
   <div class="container">
-    <div class="section-head reveal" style="margin-bottom:36px">
-      <span class="eyebrow" data-i18n="quick_h">Направления</span>
+    <div class="ed-sechead">
+      <h2 class="ed-h2"><span data-i18n="quick_h">Направления</span><span class="dot">.</span></h2>
+      <span class="ed-note" data-i18n="v2_sec01">01 — Восемь систем, один подрядчик</span>
     </div>
-    <div class="quick-grid">
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 7l14-3 1 4-14 3zM4 8v9h12v-6M8 21h4"/></svg></div>
-        <h3 data-i18n="q_cctv_t">Видеонаблюдение</h3>
-        <p data-i18n="q_cctv_d">IP-камеры, видеостены, центры мониторинга.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
-        <h3 data-i18n="q_acs_t">СКУД</h3>
-        <p data-i18n="q_acs_d">Контроль доступа, турникеты, электронные очереди.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
-        <h3 data-i18n="q_net_t">Сетевые решения</h3>
-        <p data-i18n="q_net_d">СКС, Wi-Fi, активное сетевое оборудование.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div>
-        <h3 data-i18n="q_srv_t">Серверные решения</h3>
-        <p data-i18n="q_srv_d">Серверные, ЦОД, инженерная инфраструктура.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="1"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <h3 data-i18n="q_led_t">LED и видеостены</h3>
-        <p data-i18n="q_led_d">Экраны, видеостены, диспетчерские.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <h3 data-i18n="q_tel_t">IP-телефония</h3>
-        <p data-i18n="q_tel_d">Корпоративная связь и телефония.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="services.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M11 5L6 9H2v6h4l5 4zM19 12a7 7 0 0 0-4-6.3M16 12a3 3 0 0 0-1.5-2.6"/></svg></div>
-        <h3 data-i18n="q_audio_t">Аудиосистемы</h3>
-        <p data-i18n="q_audio_d">Оповещение, звук, конференц-залы.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a href="solutions.html" class="qcard reveal">
-        <div class="qic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg></div>
-        <h3 data-i18n="q_ind_t">Решения по отраслям</h3>
-        <p data-i18n="q_ind_d">Комплексы под задачи вашего бизнеса.</p>
-        <span class="qarrow"><span data-i18n="more">Подробнее</span> <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
+    <div class="ed-dirs-grid">
+      <a href="#services" class="ed-dir"><span class="ed-num">01</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_cctv_t">Видеонаблюдение</span><span class="ed-dir-d" data-i18n="q_cctv_d">IP-камеры, видеостены, центры мониторинга.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">02</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_acs_t">СКУД</span><span class="ed-dir-d" data-i18n="q_acs_d">Контроль доступа, турникеты, электронные очереди.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">03</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_net_t">Сетевые решения</span><span class="ed-dir-d" data-i18n="q_net_d">СКС, Wi-Fi, активное сетевое оборудование.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">04</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_srv_t">Серверные решения</span><span class="ed-dir-d" data-i18n="q_srv_d">Серверные, ЦОД, инженерная инфраструктура.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">05</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_led_t">LED и видеостены</span><span class="ed-dir-d" data-i18n="q_led_d">Экраны, видеостены, диспетчерские.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">06</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_tel_t">IP-телефония</span><span class="ed-dir-d" data-i18n="q_tel_d">Корпоративная связь и телефония.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#services" class="ed-dir"><span class="ed-num">07</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_audio_t">Аудиосистемы</span><span class="ed-dir-d" data-i18n="q_audio_d">Оповещение, звук, конференц-залы.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a href="#solutions" class="ed-dir"><span class="ed-num">08</span><span class="ed-dir-body"><span class="ed-dir-t" data-i18n="q_ind_t">Решения по отраслям</span><span class="ed-dir-d" data-i18n="q_ind_d">Комплексы под задачи вашего бизнеса.</span></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
     </div>
   </div>
 </section>
+
+<!-- 02 УСЛУГИ -->
+<section id="services">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="services_eyebrow">Услуги</span>
-      <h2 data-i18n="services_h">Полный цикл инженерных и IT-работ</h2>
-      <p data-i18n="services_p">От проектирования до технического сопровождения — единая ответственность за инфраструктуру объекта.</p>
+    <div class="ed-sechead">
+      <h2 class="ed-h2"><span data-i18n="v2_services_h">Полный цикл</span><span class="dot">.</span></h2>
+      <span class="ed-note" data-i18n="v2_sec02">02 — Услуги</span>
     </div>
-    <div class="grid grid-3">
-      <!-- card -->
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v12H4z"/><path d="M2 20h20M9 16v4M15 16v4"/></svg></div>
-        <h3 data-i18n="svc.design_t">Проектирование</h3>
-        <p data-i18n="svc.design_d">Разработка технических решений и рабочей документации под требования объекта и нормативы.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="ed-svc-grid">
+      <div class="ed-svc-aside">
+        <p class="ed-statement"><span data-i18n="v2_statement">Единая ответственность за инфраструктуру объекта — от рабочей документации до сервиса 24/7</span><span class="dot">.</span></p>
+        <img src="assets/img/about-company.jpg" alt="Инженер IT-HONA работает над проектной документацией" class="ed-svc-photo">
       </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div>
-        <h3 data-i18n="svc.supply_t">Поставка оборудования</h3>
-        <p data-i18n="svc.supply_d">Подбор и поставка сертифицированного оборудования от проверенных производителей.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2-2z"/></svg></div>
-        <h3 data-i18n="svc.mount_t">Монтаж и наладка</h3>
-        <p data-i18n="svc.mount_d">Профессиональный монтаж, пусконаладочные работы и ввод систем в эксплуатацию.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3 data-i18n="svc.sec_t">Системы безопасности</h3>
-        <p data-i18n="svc.sec_d">Видеонаблюдение, контроль доступа, охранно-пожарные системы под ключ.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div>
-        <h3 data-i18n="svc.net_t">Сетевая инфраструктура</h3>
-        <p data-i18n="svc.net_d">СКС, серверные, ЦОД, активное сетевое оборудование и телекоммуникации.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="card reveal">
-        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-        <h3 data-i18n="svc.srv_t">Сервис и сопровождение</h3>
-        <p data-i18n="svc.srv_d">Гарантийное и постгарантийное обслуживание, техподдержка 24/7, модернизация.</p>
-        <a href="services.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div>
+        <div class="ed-svc-item"><span class="ed-num">/01</span><span><span class="ed-svc-t" data-i18n="svc.design_t">Проектирование</span><span class="ed-svc-d" data-i18n="svc.design_d">Технические решения и рабочая документация под требования объекта и нормативы.</span></span></div>
+        <div class="ed-svc-item"><span class="ed-num">/02</span><span><span class="ed-svc-t" data-i18n="svc.supply_t">Поставка оборудования</span><span class="ed-svc-d" data-i18n="svc.supply_d">Подбор и поставка сертифицированного оборудования от проверенных производителей.</span></span></div>
+        <div class="ed-svc-item"><span class="ed-num">/03</span><span><span class="ed-svc-t" data-i18n="svc.mount_t">Монтаж и наладка</span><span class="ed-svc-d" data-i18n="svc.mount_d">Профессиональный монтаж, пусконаладка и ввод систем в эксплуатацию.</span></span></div>
+        <div class="ed-svc-item"><span class="ed-num">/04</span><span><span class="ed-svc-t" data-i18n="svc.sec_t">Системы безопасности</span><span class="ed-svc-d" data-i18n="svc.sec_d">Видеонаблюдение, контроль доступа, охранно-пожарные системы под ключ.</span></span></div>
+        <div class="ed-svc-item"><span class="ed-num">/05</span><span><span class="ed-svc-t" data-i18n="svc.net_t">Сетевая инфраструктура</span><span class="ed-svc-d" data-i18n="svc.net_d">СКС, серверные, ЦОД, активное сетевое оборудование и телекоммуникации.</span></span></div>
+        <div class="ed-svc-item"><span class="ed-num">/06</span><span><span class="ed-svc-t" data-i18n="svc.srv_t">Сервис и сопровождение</span><span class="ed-svc-d" data-i18n="svc.srv_d">Гарантийное обслуживание, техподдержка 24/7, модернизация систем.</span></span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section style="background:var(--gray)">
-  <div class="container about-grid">
-    <div class="reveal">
-      <span class="eyebrow" data-i18n="about_eyebrow">О компании</span>
-      <h2 style="font-size:clamp(28px,3.2vw,40px);margin-bottom:24px" data-i18n="about_h">Инженерная надёжность для сложных объектов</h2>
-      <div class="about-text">
-        <p data-i18n="about_p1">IT-HONA — системный IT-интегратор полного цикла. Мы берём на себя весь путь от идеи до работающей инфраструктуры: проектирование, поставку, монтаж, настройку и техническое сопровождение.</p>
-        <p data-i18n="about_p2">Работаем с банками, государственными организациями, гостиницами, бизнес-центрами и крупными объектами, где важны надёжность, дисциплина и предсказуемый результат.</p>
-      </div>
-      <ul class="feature-list">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="about_f1">Единая ответственность за весь проект</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="about_f2">Сертифицированное оборудование и специалисты</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="about_f3">Соблюдение сроков и нормативных требований</span></li>
-      </ul>
+<!-- 03 О КОМПАНИИ -->
+<section id="about" class="ed-about">
+  <div class="container ed-about-grid">
+    <div class="ed-about-media">
+      <img src="assets/img/company-home.jpg" alt="Серверные стойки дата-центра IT-HONA">
+      <div class="ed-about-badge">5 <small data-i18n="v2_years">лет работы</small></div>
     </div>
-    <img class="about-media reveal" src="assets/img/company-home.jpg" alt="Дата-центр IT-HONA: серверные стойки с подсветкой и коммутационными кабелями в машинном зале">
+    <div>
+      <div class="ed-kicker"><span class="ed-note" data-i18n="v2_sec03">03 — О компании</span></div>
+      <h2 class="ed-h2"><span data-i18n="about_h">Инженерная надёжность для сложных объектов</span><span class="dot">.</span></h2>
+      <p data-i18n="about_p1">IT-HONA берёт на себя весь путь от идеи до работающей инфраструктуры: проектирование, поставку, монтаж, настройку и сопровождение.</p>
+      <p data-i18n="about_p2">Работаем там, где важны дисциплина и предсказуемый результат: банки, государственные организации, гостиницы, бизнес-центры.</p>
+      <div class="ed-feats">
+        <div class="ed-feat" data-i18n="about_f1">Единая ответственность за весь проект</div>
+        <div class="ed-feat" data-i18n="about_f2">Сертифицированное оборудование и специалисты</div>
+        <div class="ed-feat" data-i18n="about_f3">Соблюдение сроков и нормативных требований</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
+<!-- 04 РЕШЕНИЯ -->
+<section id="solutions" class="ed-sol">
   <div class="container">
-    <div class="stats-panel reveal">
-      <div class="stats-grid">
-        <div class="stat-card" style="--d:.05s">
-          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-          <div class="stat-n"><span data-count="32" data-suffix="+">0</span></div>
-          <span class="stat-dash"></span>
-          <div class="stat-l" data-i18n="stat_projects">реализованных проектов</div>
-        </div>
-        <div class="stat-card" style="--d:.15s">
-          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <div class="stat-n"><span data-count="5">0</span></div>
-          <span class="stat-dash"></span>
-          <div class="stat-l" data-i18n="stat_years_work">лет успешной работы</div>
-        </div>
-        <div class="stat-card" style="--d:.25s">
-          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
-          <div class="stat-n"><span data-count="50">0</span></div>
-          <span class="stat-dash"></span>
-          <div class="stat-l" data-i18n="stat_clients">постоянных клиентов</div>
-        </div>
-        <div class="stat-card" style="--d:.35s">
-          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H4a1 1 0 0 1-1-1v-6a9 9 0 0 1 18 0v6a1 1 0 0 1-1 1h-2a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span>
-          <div class="stat-n"><span data-count="24" data-suffix="/7">0</span></div>
-          <span class="stat-dash"></span>
-          <div class="stat-l" data-i18n="stat_support">техническая поддержка</div>
-        </div>
+    <div class="ed-sechead">
+      <h2 class="ed-h2"><span data-i18n="v2_sol_h">Решения по отраслям</span><span class="dot">.</span></h2>
+      <span class="ed-note" data-i18n="v2_sec04">04 — Решения</span>
+    </div>
+    <div class="ed-sol-grid">
+      <div class="ed-sol-card">
+        <span class="ed-num">/01</span>
+        <div class="ed-sol-t" data-i18n="sol_banks_t">Банки и финансы</div>
+        <div class="ed-sol-d" data-i18n="sol_banks_d">Безопасность, электронная очередь, СКУД, видеонаблюдение.</div>
+        <div class="ed-tags"><span class="ed-tag">СКУД</span><span class="ed-tag">Видеонаблюдение</span><span class="ed-tag">Очереди</span></div>
+      </div>
+      <div class="ed-sol-card">
+        <span class="ed-num">/02</span>
+        <div class="ed-sol-t" data-i18n="sol_hotels_t">Гостиницы</div>
+        <div class="ed-sol-d" data-i18n="sol_hotels_d">Гостиничные системы, IPTV, сети, контроль доступа в номера.</div>
+        <div class="ed-tags"><span class="ed-tag">IPTV</span><span class="ed-tag">Wi-Fi</span><span class="ed-tag">СКУД</span></div>
+      </div>
+      <div class="ed-sol-card">
+        <span class="ed-num">/03</span>
+        <div class="ed-sol-t" data-i18n="sol_bc_t">Бизнес-центры</div>
+        <div class="ed-sol-d" data-i18n="sol_bc_d">Слаботочные системы, диспетчеризация, инженерная инфраструктура.</div>
+        <div class="ed-tags"><span class="ed-tag">СКС</span><span class="ed-tag">LED</span><span class="ed-tag">Аудио</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOLUTIONS teaser -->
-<section>
+<!-- 05 ПАРТНЁРЫ -->
+<section id="partners">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow" data-i18n="solutions_eyebrow">Решения</span>
-      <h2 data-i18n="solutions_h">Отраслевые решения под задачи объекта</h2>
-      <p data-i18n="solutions_p">Готовые комплексы инженерных и IT-систем для разных отраслей.</p>
+    <div class="ed-sechead">
+      <h2 class="ed-h2"><span data-i18n="nav.partners">Партнёры</span><span class="dot">.</span></h2>
+      <span class="ed-note" data-i18n="v2_sec05">05 — 12 официальных вендоров</span>
     </div>
-    <div class="grid grid-3">
-      <div class="card reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div><h3 data-i18n="sol_banks_t">Банки и финансы</h3><p data-i18n="sol_banks_d">Безопасность, электронная очередь, СКУД, видеонаблюдение.</p><a href="solutions.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="card reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M8 4v5"/></svg></div><h3 data-i18n="sol_hotels_t">Гостиницы</h3><p data-i18n="sol_hotels_d">Гостиничные системы, IPTV, сети, контроль доступа в номера.</p><a href="solutions.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="card reveal"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 21V7l8-4 8 4v14M4 12h16M4 16h16"/></svg></div><h3 data-i18n="sol_bc_t">Бизнес-центры</h3><p data-i18n="sol_bc_d">Слаботочные системы, диспетчеризация, инженерная инфраструктура.</p><a href="solutions.html" class="more"><span data-i18n="more">Подробнее</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="ed-partners-grid">
+      <div class="ed-brand"><img src="assets/brands/cisco.png" alt="Cisco" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/huawei.png" alt="Huawei" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/dell.png" alt="Dell" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/hp.png" alt="HP" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/hikvision.png" alt="Hikvision" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/dahua.png" alt="Dahua" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/apc.png" alt="APC" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/bosch.png" alt="Bosch" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/mikrotik.png" alt="MikroTik" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/ubiquiti.png" alt="Ubiquiti" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/zkteco.png" alt="ZKTeco" loading="lazy"></div>
+      <div class="ed-brand"><img src="assets/brands/legrand.png" alt="Legrand" loading="lazy"></div>
     </div>
-    <div class="reveal" style="text-align:center;margin-top:40px"><a href="solutions.html" class="btn btn-outline"><span data-i18n="solutions_all">Все решения</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
-<!-- CTA / FORM -->
-<section class="cta-band">
-  <div class="container form-grid">
-    <div class="reveal">
-      <span class="eyebrow" data-i18n="cta_form_eyebrow">Оставить заявку</span>
-      <h2 data-i18n="cta_form_h">Обсудим ваш проект</h2>
-      <p class="lead" data-i18n="cta_form_p">Опишите задачу — инженер IT-HONA свяжется с вами, проведёт консультацию и подготовит предложение.</p>
-      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg> <a href="tel:+992889295555" style="color:inherit">+992 88 929 5555</a></div>
-      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg> info@ithona.tj</div>
-      <div class="contact-line"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span data-i18n="work_time">Пн–Пт, 9:00–18:00</span></div>
+<!-- 06 КОНТАКТЫ -->
+<section id="contacts" class="ed-contacts">
+  <div class="container">
+    <div class="ed-contacts-grid">
+      <div>
+        <div class="ed-kicker"><span class="ed-note" data-i18n="v2_sec06">06 — Контакт</span></div>
+        <h2><span data-i18n="cta_form_h">Обсудим ваш проект</span><span class="q">?</span></h2>
+        <p class="sub" data-i18n="cta_form_p">Опишите задачу — инженер IT-HONA свяжется с вами, проведёт консультацию и подготовит предложение.</p>
+        <div class="ed-crows">
+          <a href="tel:+992889295555" class="ed-crow"><span class="lbl" data-i18n="cp.l_phone">Телефон</span>+992 88 929 5555</a>
+          <a href="mailto:info@ithona.tj" class="ed-crow"><span class="lbl" data-i18n="cp.l_email">Email</span>info@ithona.tj</a>
+          <div class="ed-crow"><span class="lbl" data-i18n="cp.l_hours">График</span><span data-i18n="work_time">Пн–Пт, 9:00–18:00</span></div>
+          <div class="ed-crow addr"><span class="lbl" data-i18n="cp.l_addr">Адрес</span><span data-i18n="footer_addr">Душанбе, ул. Ахмада Дониша, 5/1</span></div>
+        </div>
+      </div>
+      <div class="ed-form-wrap">
+        <div class="form-done" hidden>
+          <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#149447" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <div class="t" data-i18n="v2_sent_t">Заявка отправлена</div>
+          <p data-i18n="v2_sent_p">Инженер свяжется с вами в течение рабочего дня.</p>
+          <button type="button" class="form-again" data-i18n="v2_sent_again">Отправить ещё одну</button>
+        </div>
+        <form class="appeal ed-form" novalidate>
+          <div class="ed-form-h" data-i18n="cta_apply">Оставить заявку</div>
+          <label data-i18n="form_name">Имя</label>
+          <input type="text" name="name" placeholder="Ваше имя" data-i18n-ph="cp.ph_name" required>
+          <label data-i18n="form_contact">Телефон или email</label>
+          <input type="text" name="contact" placeholder="+992 __ ___ __ __" data-i18n-ph="form_contact_ph" required>
+          <label data-i18n="form_msg">Сообщение</label>
+          <textarea name="message" rows="4" placeholder="Кратко опишите задачу" data-i18n-ph="cp.ph_msg"></textarea>
+          <input type="text" name="website" class="ith-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" hidden>
+          <button type="submit" class="ed-btn" data-i18n="form_submit">Отправить заявку</button>
+        </form>
+      </div>
     </div>
-    <form class="appeal reveal" novalidate>
-      <label data-i18n="form_name">Имя</label>
-      <input type="text" name="name" placeholder="Ваше имя" data-i18n-ph="form_name_ph" required>
-      <label data-i18n="form_contact">Телефон или email</label>
-      <input type="text" name="contact" placeholder="+992 __ ___ __ __" data-i18n-ph="form_contact_ph" required>
-      <label data-i18n="form_msg">Сообщение</label>
-      <textarea name="message" placeholder="Кратко опишите задачу" data-i18n-ph="form_msg_ph"></textarea>
-      <input type="text" name="website" class="ith-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" hidden>
-      <button type="submit" class="btn btn-primary" style="justify-content:center" data-i18n="form_submit">Отправить заявку</button>
-    </form>
+    <div class="ed-map-wrap">
+      <div class="ed-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?text=%D0%94%D1%83%D1%88%D0%B0%D0%BD%D0%B1%D0%B5%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0%20%D0%94%D0%BE%D0%BD%D0%B8%D1%88%D0%B0%2C%205/1&amp;z=17" width="100%" height="100%" frameborder="0" loading="lazy" title="IT-HONA на карте — Душанбе, ул. Ахмада Дониша, 5/1"></iframe>
+        <div class="ed-map-label">IT-HONA · ул. Ахмада Дониша, 5/1</div>
+      </div>
+      <div class="ed-map-actions">
+        <span class="ed-map-hint" data-i18n="v2_maps_hint">Откройте адрес в удобных вам картах:</span>
+        <div class="ed-map-btns">
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%94%D1%83%D1%88%D0%B0%D0%BD%D0%B1%D0%B5%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0%20%D0%94%D0%BE%D0%BD%D0%B8%D1%88%D0%B0%2C%205/1" target="_blank" rel="noopener" class="ed-mbtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s7-6.7 7-12a7 7 0 0 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Google Maps</a>
+          <a href="https://yandex.ru/maps/?text=%D0%94%D1%83%D1%88%D0%B0%D0%BD%D0%B1%D0%B5%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0%20%D0%94%D0%BE%D0%BD%D0%B8%D1%88%D0%B0%2C%205/1" target="_blank" rel="noopener" class="ed-mbtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s7-6.7 7-12a7 7 0 0 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Яндекс.Карты</a>
+          <a href="https://2gis.ru/dushanbe/search/%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0%20%D0%94%D0%BE%D0%BD%D0%B8%D1%88%D0%B0%2C%205/1" target="_blank" rel="noopener" class="ed-mbtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s7-6.7 7-12a7 7 0 0 0-14 0c0 5.3 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>2GIS</a>
+          <a href="https://yandex.ru/maps/?rtext=~%D0%94%D1%83%D1%88%D0%B0%D0%BD%D0%B1%D0%B5%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0%20%D0%94%D0%BE%D0%BD%D0%B8%D1%88%D0%B0%2C%205/1&amp;rtt=auto" target="_blank" rel="noopener" class="ed-mbtn primary"><span data-i18n="map_route">Построить маршрут</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="ed-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="ed-footer-grid">
       <div>
-        <a href="index.html" class="logo logo--light"><span class="mark"><span class="it">IT</span><span class="sep">-</span><span class="hona">HONA</span></span></a>
+        <img src="assets/img/logo.svg" alt="IT-HONA">
         <p class="desc" data-i18n="footer_desc">Системный IT-интегратор полного цикла. Проектируем, внедряем и сопровождаем инженерные и IT-системы.</p>
-        <div class="socials">
-          <a href="#" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 3L2 11l6 2 2 6 3-4 5 4z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7h.01"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h4v16H4zM4 4v0M10 20V10h4v2c1-2 6-2 6 3v5h-4v-4c0-2-3-2-3 0v4z"/></svg></a>
-        </div>
       </div>
-      <div class="f-col">
-        <h4 data-i18n="footer_company">Компания</h4>
-        <ul>
-          <li><a href="about.html" data-i18n="nav.about">О компании</a></li>          <li><a href="partners.html" data-i18n="nav.partners">Партнёры</a></li>
-          <li><a href="contacts.html" data-i18n="nav.contacts">Контакты</a></li>
-        </ul>
+      <div class="ed-fcol">
+        <div class="h" data-i18n="footer_company">Компания</div>
+        <a href="#about" data-i18n="nav.about">О компании</a>
+        <a href="#partners" data-i18n="nav.partners">Партнёры</a>
+        <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
       </div>
-      <div class="f-col">
-        <h4 data-i18n="footer_services">Услуги</h4>
-        <ul>
-          <li><a href="services.html" data-i18n="svc.design_t">Проектирование</a></li>
-          <li><a href="services.html" data-i18n="svc.supply_t">Поставка оборудования</a></li>
-          <li><a href="services.html" data-i18n="svc.mount_t">Монтаж и наладка</a></li>
-          <li><a href="services.html" data-i18n="svc.srv_t">Сервис 24/7</a></li>
-        </ul>
+      <div class="ed-fcol">
+        <div class="h" data-i18n="footer_services">Услуги</div>
+        <a href="#services" data-i18n="svc.design_t">Проектирование</a>
+        <a href="#services" data-i18n="svc.supply_t">Поставка оборудования</a>
+        <a href="#services" data-i18n="svc.mount_t">Монтаж и наладка</a>
+        <a href="#services" data-i18n="svc.srv_t">Сервис 24/7</a>
       </div>
-      <div class="f-col">
-        <h4 data-i18n="footer_contacts">Контакты</h4>
-        <ul>
-          <li><a href="tel:+992889295555">+992 88 929 5555</a></li>
-        <li><a href="https://it-hona.tj">it-hona.tj</a></li>
-          <li><a href="mailto:info@ithona.tj">info@ithona.tj</a></li>
-          <li data-i18n="footer_addr">г. Душанбе, Таджикистан</li>
-        </ul>
+      <div class="ed-fcol">
+        <div class="h" data-i18n="footer_contacts">Контакты</div>
+        <a href="tel:+992889295555">+992 88 929 5555</a>
+        <a href="mailto:info@ithona.tj">info@ithona.tj</a>
+        <span data-i18n="footer_addr">Душанбе, ул. Ахмада Дониша, 5/1</span>
       </div>
     </div>
-    <div class="footer-bottom">
+    <div class="ed-footer-bottom">
       <span data-i18n="footer_rights">© 2026 IT-HONA. Все права защищены.</span>
-      <span class="sign" data-i18n="footer_sign">IT-HONA — системный IT-интегратор полного цикла.</span>
+      <span class="sign" data-i18n="hero_slogan">Интегрируем технологии. Создаём надёжную инфраструктуру.</span>
     </div>
   </div>
 </footer>
 
-<script src="assets/main.js?v=2"></script>
-<script src="assets/i18n.js"></script>
+<script src="assets/main.js?v=3"></script>
+<script src="assets/i18n.js?v=2"></script>
 <script src="assets/widget.js"></script>
 <script src="assets/cookie.js"></script>
 <script>

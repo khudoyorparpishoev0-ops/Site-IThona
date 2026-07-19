@@ -21,6 +21,16 @@
     });
   }
 
+  // "Отправить ещё одну" — вернуть форму вместо панели успеха
+  document.querySelectorAll('.form-again').forEach(b => {
+    b.addEventListener('click', () => {
+      const wrap = b.closest('.ed-form-wrap');
+      if(!wrap) return;
+      wrap.querySelector('.form-done').hidden = true;
+      wrap.querySelector('form').hidden = false;
+    });
+  });
+
   // reveal on scroll
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
@@ -86,9 +96,17 @@
 
       const CT = window.CONTACTS || {};
       const done = () => {
+        // если рядом есть панель успеха (новый дизайн) — показываем её вместо формы
+        const wrap = form.closest('.ed-form-wrap');
+        const donePanel = wrap && wrap.querySelector('.form-done');
+        form.reset();
+        if(donePanel){
+          form.hidden = true;
+          donePanel.hidden = false;
+          return;
+        }
         btn.textContent = labelSent;
         btn.style.background = '#0f7d3b';
-        form.reset();
         setTimeout(()=>{ btn.textContent = labelIdle; btn.style.background=''; }, 3500);
       };
 

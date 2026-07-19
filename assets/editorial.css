@@ -1,0 +1,223 @@
+/* ============================================================
+   IT-HONA — Главная v2 (editorial)
+   Стили только для index.html; подключается ПОСЛЕ style.css
+   ============================================================ */
+
+body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+.v2 .container{max-width:1280px;margin:0 auto;padding:0 32px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ---------- header (поверх базовых правил style.css) ---------- */
+.v2 .header{background:rgba(255,255,255,.94)}
+.v2 .header-inner{height:74px}
+.v2 .nav a{font-size:14px;font-weight:500}
+.v2 .nav a.active{font-weight:600}
+.v2 .lang{font-size:12.5px;font-weight:700}
+.v2 .lang a.on{color:#252A2D;border-bottom:2px solid #149447;padding-bottom:2px}
+.v2 .header-phone{font-size:14px;font-weight:700;color:#149447;text-decoration:none;white-space:nowrap}
+.v2 .header-phone:hover{color:#0B3D2A}
+
+/* ---------- общие элементы секций ---------- */
+.v2 section{padding:110px 0}
+.v2 .ed-h2{margin:0;font-size:clamp(30px,3.4vw,46px);font-weight:900;letter-spacing:-.03em;color:#252A2D;line-height:1.05}
+.v2 .ed-h2 .dot{color:#149447}
+.v2 .ed-sechead{display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  border-bottom:2px solid #252A2D;padding-bottom:18px}
+.v2 .ed-note{font-size:13px;font-weight:600;color:#8b938f;white-space:nowrap}
+.v2 .ed-num{font-size:13px;font-weight:700;color:#149447;font-family:ui-monospace,'SF Mono',Menlo,monospace;flex:none}
+
+/* ---------- hero ---------- */
+.v2 .ed-hero{padding:72px 0 0;overflow:hidden}
+.v2 .ed-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:stretch}
+.v2 .ed-hero-left{display:flex;flex-direction:column;animation:fadeUp .7s cubic-bezier(.22,.61,.36,1) both}
+.v2 .ed-eyebrow{font-size:12.5px;font-weight:600;color:#8b938f;margin-bottom:26px;display:flex;gap:12px;align-items:center}
+.v2 .ed-eyebrow::before{content:"";width:40px;height:1.5px;background:#149447;display:inline-block;flex:none}
+.v2 .ed-hero h1{margin:0 0 26px;font-size:clamp(48px,6vw,84px);font-weight:900;line-height:.98;letter-spacing:-.04em;color:#252A2D}
+.v2 .ed-hero h1 .dot{color:#149447}
+.v2 .ed-lead{margin:0 0 32px;font-size:17.5px;line-height:1.55;color:#3A4145;max-width:430px}
+.v2 .ed-hero-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-bottom:52px}
+.v2 .ed-btn{display:inline-flex;align-items:center;gap:10px;background:#252A2D;color:#fff;text-decoration:none;
+  font-size:14.5px;font-weight:600;padding:17px 32px;border:none;cursor:pointer;font-family:inherit;transition:background .25s}
+.v2 .ed-btn:hover{background:#149447;color:#fff}
+.v2 .ed-link{font-size:14.5px;font-weight:600;color:#149447;text-decoration:none;border-bottom:1.5px solid #149447;padding-bottom:3px}
+.v2 .ed-link:hover{color:#0B3D2A}
+.v2 .ed-stats{margin-top:auto;display:flex;border-top:1px solid #E2E6E4}
+.v2 .ed-stat{padding:24px 40px 28px 0}
+.v2 .ed-stat + .ed-stat{padding-left:40px;border-left:1px solid #E2E6E4}
+.v2 .ed-stat:last-child{padding-right:0}
+.v2 .ed-stat .n{font-size:32px;font-weight:800;letter-spacing:-.02em;color:#252A2D;line-height:1.1}
+.v2 .ed-stat .n .acc{color:#149447}
+.v2 .ed-stat .l{font-size:12.5px;color:#8b938f;margin-top:2px}
+.v2 .ed-hero-media{position:relative;min-height:560px;animation:fadeUp .7s cubic-bezier(.22,.61,.36,1) .15s both}
+.v2 .ed-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.v2 .ed-hero-badge{position:absolute;left:-22px;bottom:44px;background:#149447;color:#fff;padding:18px 22px;
+  font-size:13px;font-weight:600;line-height:1.5;max-width:230px}
+.v2 .ed-hero-est{position:absolute;right:0;top:0;background:#fff;padding:12px 16px;font-size:11.5px;
+  font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#252A2D}
+
+/* ---------- 01 Направления ---------- */
+.v2 .ed-dirs{padding-bottom:0}
+.v2 .ed-dirs-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.v2 .ed-dir{display:flex;gap:22px;align-items:baseline;padding:26px 20px 26px 0;border-bottom:1px solid #E2E6E4;
+  text-decoration:none;transition:background .25s,padding .25s}
+.v2 .ed-dir:hover{background:#F9FBF9;padding-left:14px}
+.v2 .ed-dir-body{flex:1;min-width:0}
+.v2 .ed-dir-t{display:block;font-size:19px;font-weight:700;letter-spacing:-.01em;color:#252A2D;margin-bottom:3px}
+.v2 .ed-dir-d{display:block;font-size:13.5px;color:#8b938f}
+.v2 .ed-dir svg{flex:none;align-self:center}
+
+/* ---------- 02 Услуги ---------- */
+.v2 .ed-svc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start;margin-top:56px}
+.v2 .ed-svc-aside{position:sticky;top:110px;display:flex;flex-direction:column;gap:28px}
+.v2 .ed-statement{margin:0;font-size:22px;line-height:1.5;font-weight:500;color:#252A2D;letter-spacing:-.01em}
+.v2 .ed-statement .dot{color:#149447}
+.v2 .ed-svc-photo{width:100%;max-width:460px;height:600px;object-fit:cover;display:block}
+.v2 .ed-svc-item{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:24px 0;border-top:1px solid #E2E6E4}
+.v2 .ed-svc-item:first-child{border-top:none;padding-top:0}
+.v2 .ed-svc-t{display:block;font-size:19px;font-weight:700;letter-spacing:-.01em;color:#252A2D;margin-bottom:5px}
+.v2 .ed-svc-d{display:block;font-size:14.5px;color:#3A4145;max-width:480px}
+
+/* ---------- 03 О компании ---------- */
+.v2 .ed-about{background:#F3F5F4}
+.v2 .ed-about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.v2 .ed-about-media{position:relative}
+.v2 .ed-about-media img{width:100%;height:auto;display:block}
+.v2 .ed-about-badge{position:absolute;right:-18px;top:40px;background:#252A2D;color:#fff;padding:16px 20px;
+  font-size:26px;font-weight:800;letter-spacing:-.02em}
+.v2 .ed-about-badge small{font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.v2 .ed-kicker{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+.v2 .ed-kicker::after{content:"";flex:1;height:1px;background:#D5DAD7;display:block}
+.v2 .ed-about h2{margin:0 0 24px}
+.v2 .ed-about p{margin:0 0 16px;font-size:16.5px;line-height:1.6}
+.v2 .ed-about p:last-of-type{margin-bottom:30px}
+.v2 .ed-feats{display:flex;flex-direction:column;border-top:1px solid #D5DAD7}
+.v2 .ed-feat{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid #D5DAD7;
+  font-size:15px;font-weight:600;color:#252A2D}
+.v2 .ed-feat:last-child{border-bottom:none}
+.v2 .ed-feat::before{content:"→";color:#149447;font-weight:800}
+
+/* ---------- 04 Решения ---------- */
+.v2 .ed-sol{background:#0B3D2A;color:#fff}
+.v2 .ed-sol .ed-sechead{border-bottom-color:rgba(255,255,255,.25);margin-bottom:56px}
+.v2 .ed-sol .ed-h2{color:#fff}
+.v2 .ed-sol .ed-h2 .dot{color:#2fce74}
+.v2 .ed-sol .ed-note{color:rgba(255,255,255,.55)}
+.v2 .ed-sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.v2 .ed-sol-card{padding:8px 36px 8px 28px;border-left:1px solid rgba(255,255,255,.18);transition:border-color .3s}
+.v2 .ed-sol-card:hover{border-color:#2fce74}
+.v2 .ed-sol-card .ed-num{color:#2fce74;margin-bottom:16px;display:block}
+.v2 .ed-sol-t{font-size:23px;font-weight:800;letter-spacing:-.02em;color:#fff;margin-bottom:12px}
+.v2 .ed-sol-d{font-size:14.5px;color:rgba(255,255,255,.72);margin-bottom:20px;min-height:66px}
+.v2 .ed-tags{display:flex;flex-wrap:wrap;gap:7px}
+.v2 .ed-tag{font-size:12px;font-weight:500;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.25);padding:5px 11px}
+
+/* ---------- 05 Партнёры ---------- */
+.v2 .ed-partners-grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.v2 .ed-brand{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:20px 26px;
+  border-bottom:1px solid #E2E6E4;border-right:1px solid #E2E6E4}
+.v2 .ed-brand img{max-height:36px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5;
+  transition:filter .3s,opacity .3s}
+.v2 .ed-brand:hover img{filter:grayscale(0);opacity:1}
+
+/* ---------- 06 Контакты ---------- */
+.v2 .ed-contacts{background:#252A2D;color:#fff}
+.v2 .ed-contacts-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.v2 .ed-contacts .ed-kicker{color:rgba(255,255,255,.5)}
+.v2 .ed-contacts .ed-kicker::after{background:rgba(255,255,255,.2)}
+.v2 .ed-contacts h2{margin:0 0 18px;font-size:clamp(34px,4vw,56px);font-weight:900;line-height:1;
+  letter-spacing:-.03em;color:#fff}
+.v2 .ed-contacts h2 .q{color:#2fce74}
+.v2 .ed-contacts .sub{margin:0 0 36px;font-size:16.5px;color:rgba(255,255,255,.75);max-width:420px}
+.v2 .ed-crows{display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.18)}
+.v2 .ed-crow{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;
+  border-bottom:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:19px;font-weight:700}
+.v2 .ed-crow:last-child{border-bottom:none}
+.v2 a.ed-crow:hover{color:#2fce74}
+.v2 .ed-crow .lbl{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.08em;
+  text-transform:uppercase;flex:none}
+.v2 .ed-crow.addr{font-size:17px;text-align:right}
+/* форма */
+.v2 .ed-form{background:#fff;padding:40px;display:flex;flex-direction:column;gap:16px}
+.v2 .ed-form-h{font-size:19px;font-weight:800;color:#252A2D;letter-spacing:-.01em;margin-bottom:2px}
+.v2 .ed-form label{font-size:12.5px;font-weight:700;color:#252A2D;letter-spacing:.06em;text-transform:uppercase;margin-bottom:-8px}
+.v2 .ed-form input,.v2 .ed-form textarea{width:100%;box-sizing:border-box;padding:14px 15px;border:1.5px solid #E2E6E4;
+  font-family:inherit;font-size:15px;color:#252A2D;outline:none;border-radius:0;background:#fff}
+.v2 .ed-form input:focus,.v2 .ed-form textarea:focus{border-color:#149447}
+.v2 .ed-form textarea{resize:vertical}
+.v2 .ed-form .ed-btn{justify-content:center}
+.v2 .form-done{background:#fff;padding:64px 40px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.v2 .form-done .ok{width:64px;height:64px;background:#e7f6ed;display:flex;align-items:center;justify-content:center}
+.v2 .form-done .t{font-size:21px;font-weight:800;color:#252A2D;letter-spacing:-.01em}
+.v2 .form-done p{margin:0;font-size:15px;color:#3A4145}
+.v2 .form-again{margin-top:8px;background:none;border:none;color:#149447;font-family:inherit;font-size:14px;
+  font-weight:600;cursor:pointer;border-bottom:1.5px solid #149447;padding:0 0 2px}
+/* карта */
+.v2 .ed-map-wrap{margin-top:72px}
+.v2 .ed-map{height:440px;border:1px solid rgba(255,255,255,.18);position:relative}
+.v2 .ed-map iframe{display:block;border:0;width:100%;height:100%}
+.v2 .ed-map-label{position:absolute;left:0;top:0;background:#149447;color:#fff;padding:12px 18px;
+  font-size:13px;font-weight:600;pointer-events:none}
+.v2 .ed-map-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:22px}
+.v2 .ed-map-hint{font-size:13.5px;font-weight:600;color:rgba(255,255,255,.6)}
+.v2 .ed-map-btns{display:flex;flex-wrap:wrap;gap:12px}
+.v2 .ed-mbtn{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(255,255,255,.3);color:#fff;
+  text-decoration:none;font-size:13.5px;font-weight:600;padding:12px 20px;transition:all .25s}
+.v2 .ed-mbtn:hover{border-color:#2fce74;color:#2fce74}
+.v2 .ed-mbtn.primary{background:#149447;border-color:#149447}
+.v2 .ed-mbtn.primary:hover{background:#0f7d3b;color:#fff;border-color:#0f7d3b}
+
+/* ---------- footer ---------- */
+.v2 .ed-footer{background:#fff;border-top:1px solid #E2E6E4;padding:56px 0 28px}
+.v2 .ed-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;margin-bottom:48px}
+.v2 .ed-footer img{height:42px;width:auto}
+.v2 .ed-footer .desc{margin:16px 0 0;font-size:14px;color:#8b938f;max-width:280px}
+.v2 .ed-fcol{display:flex;flex-direction:column;gap:11px}
+.v2 .ed-fcol .h{font-size:12.5px;font-weight:700;color:#252A2D;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.v2 .ed-fcol a{color:#3A4145;text-decoration:none;font-size:14px}
+.v2 .ed-fcol a:hover{color:#149447}
+.v2 .ed-fcol span{font-size:14px;color:#3A4145}
+.v2 .ed-footer-bottom{border-top:1px solid #E2E6E4;padding-top:20px;display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;font-size:13px;color:#8b938f}
+.v2 .ed-footer-bottom .sign{color:#149447;font-weight:600}
+
+/* ---------- адаптив ---------- */
+@media(max-width:1060px){
+  .v2 .ed-hero-grid{grid-template-columns:1fr;gap:40px}
+  .v2 .ed-hero-media{min-height:420px}
+  .v2 .ed-hero-badge{left:0}
+  .v2 .ed-svc-grid{grid-template-columns:1fr;gap:40px}
+  .v2 .ed-svc-aside{position:static}
+  .v2 .ed-svc-photo{height:420px}
+  .v2 .ed-about-grid{grid-template-columns:1fr;gap:44px}
+  .v2 .ed-about-badge{right:0}
+  .v2 .ed-sol-grid{grid-template-columns:1fr;gap:36px}
+  .v2 .ed-sol-card{padding-right:0}
+  .v2 .ed-partners-grid{grid-template-columns:repeat(3,1fr)}
+  .v2 .ed-contacts-grid{grid-template-columns:1fr;gap:48px}
+  .v2 .ed-footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:680px){
+  .v2 .header-phone{display:none}
+  .v2 .container{padding:0 20px}
+  .v2 section{padding:64px 0}
+  .v2 .ed-hero{padding:40px 0 0}
+  .v2 .ed-hero h1{font-size:clamp(40px,11vw,56px)}
+  .v2 .ed-stats{flex-direction:column}
+  .v2 .ed-stat{padding:16px 0!important;border-left:none!important;border-top:1px solid #E2E6E4}
+  .v2 .ed-stat:first-child{border-top:none}
+  .v2 .ed-dirs-grid{grid-template-columns:1fr}
+  .v2 .ed-sechead{flex-direction:column;align-items:flex-start;gap:6px}
+  .v2 .ed-note{white-space:normal}
+  .v2 .ed-svc-item{grid-template-columns:48px 1fr}
+  .v2 .ed-svc-photo{height:300px}
+  .v2 .ed-partners-grid{grid-template-columns:repeat(2,1fr)}
+  .v2 .ed-map{height:320px}
+  .v2 .ed-crow{font-size:16px;flex-wrap:wrap}
+  .v2 .ed-footer-grid{grid-template-columns:1fr}
+  .v2 .ed-form{padding:28px 22px}
+  .v2 .ed-hero-badge{position:static;margin-top:0;max-width:none;display:block}
+  .v2 .ed-hero-media{display:flex;flex-direction:column;min-height:0}
+  .v2 .ed-hero-media img{position:static;height:300px}
+  .v2 .ed-hero-est{display:none}
+}
