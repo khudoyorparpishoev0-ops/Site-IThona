@@ -442,9 +442,16 @@ form.appeal textarea{resize:vertical;min-height:100px}
 .lang a{cursor:pointer}
 .lang-mobile{display:none}
 @media(max-width:680px){
-  .nav.open .lang-mobile{display:block;border-top:1px solid var(--gray-line);padding-top:12px;margin-top:10px}
-  .lang-mobile .lm-title{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#9aa3a0;margin-bottom:6px}
-  .lang-mobile a{display:block;padding:8px 0;font-size:16px;font-weight:500;color:var(--graphite);cursor:pointer}
+  /* языки: компактный ряд квадратных кнопок RU / TJ / EN */
+  .nav.open .lang-mobile{display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+    border-top:1px solid var(--gray-line);padding-top:14px;margin-top:10px}
+  .lang-mobile .lm-title{width:100%;font-size:12px;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;color:#9aa3a0;margin-bottom:2px}
+  .lang-mobile a{display:flex;align-items:center;justify-content:center;
+    width:48px;height:44px;border:1.5px solid var(--gray-line);border-radius:10px;
+    font-size:14px;font-weight:700;color:var(--graphite);cursor:pointer;
+    transition:all .2s var(--ease);padding:0}
+  .lang-mobile a.on{background:var(--green);border-color:var(--green);color:#fff}
   .lang-mobile a.on{color:var(--green);font-weight:600}
 }
 
