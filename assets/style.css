@@ -410,16 +410,20 @@ form.appeal textarea{resize:vertical;min-height:100px}
   section{padding:60px 0}
   .nav,.header-right .lang,.header-right .btn{display:none}
   .header-right .burger{display:flex}
-  /* открытое меню: компактная непрозрачная панель под шапкой, высота по содержимому;
-     всё вокруг затемняется огромным box-shadow (страница не просвечивает).
-     header имеет backdrop-filter => он containing block для fixed-потомка,
-     поэтому позиционируем от top:0 с внутренним отступом под шапку. */
-  .nav.open{display:flex;position:fixed;top:0;left:0;right:0;height:auto;max-height:100dvh;
-    z-index:99;flex-direction:column;align-items:stretch;background:#fff;
-    padding:96px 24px 18px;gap:0;border-radius:0 0 16px 16px;
-    box-shadow:0 14px 34px rgba(0,0,0,.18),0 0 0 100vmax rgba(10,20,15,.45);
+  /* открытое меню: выдвижная панель СПРАВА (drawer), непрозрачная;
+     остальная страница затемняется огромным box-shadow.
+     header имеет backdrop-filter => он containing block для fixed-потомка. */
+  .nav.open{display:flex;position:fixed;top:0;right:0;left:auto;height:100dvh;
+    width:min(320px,85vw);z-index:99;flex-direction:column;align-items:stretch;
+    background:#fff;padding:92px 26px 24px;gap:0;border-radius:16px 0 0 16px;
+    box-shadow:-10px 0 34px rgba(0,0,0,.22),0 0 0 100vmax rgba(10,20,15,.45);
     overflow-y:auto;-webkit-overflow-scrolling:touch}
   .nav.open a{padding:11px 0;font-size:16px;text-align:left}
+  /* бургер остаётся видимым поверх затемнения и превращается в крестик */
+  .nav.open~.header-right{position:relative;z-index:101}
+  .nav.open~.header-right .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav.open~.header-right .burger span:nth-child(2){opacity:0}
+  .nav.open~.header-right .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .grid-3,.grid-2{grid-template-columns:1fr}
   .partners-grid{grid-template-columns:repeat(2,1fr)}
   .partner{padding:16px 18px}

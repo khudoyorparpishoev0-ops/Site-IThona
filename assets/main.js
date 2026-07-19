@@ -13,6 +13,12 @@
   if(burger && nav){
     burger.addEventListener('click', () => nav.classList.toggle('open'));
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>nav.classList.remove('open')));
+    // тап по затемнённой области закрывает меню
+    document.addEventListener('click', (e) => {
+      if(nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)){
+        nav.classList.remove('open');
+      }
+    });
   }
 
   // reveal on scroll
