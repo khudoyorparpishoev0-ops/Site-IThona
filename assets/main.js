@@ -22,9 +22,11 @@
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   // animated counters
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const animate = (el)=>{
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || '';
+    if(reduceMotion){ el.textContent = (target % 1 ? target.toFixed(1) : target) + suffix; return; }
     const dur = 1400; const start = performance.now();
     const step = (t)=>{
       const p = Math.min((t-start)/dur,1);

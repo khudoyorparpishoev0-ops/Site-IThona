@@ -35,6 +35,7 @@ const I18N = {
     hero_btn1: "Получить консультацию", hero_btn2: "Смотреть решения",
     stat_years:"лет на рынке", stat_projects:"реализованных проектов",
     stat_engineers:"инженеров в команде", stat_support:"техническая поддержка",
+    stat_years_work:"лет успешной работы", stat_clients:"постоянных клиентов",
 
     services_eyebrow:"Услуги", services_h:"Полный цикл инженерных и IT-работ",
     services_p:"От проектирования до технического сопровождения — единая ответственность за инфраструктуру объекта.",
@@ -110,7 +111,9 @@ const I18N = {
     q_ind_t:"Решения по отраслям", q_ind_d:"Комплексы под задачи вашего бизнеса.",
     cookie_text:"Мы используем файлы cookie, чтобы сайт работал корректно и удобно. Продолжая пользоваться сайтом, вы соглашаетесь с этим.",
     cookie_ok:"Понятно", cookie_more:"Подробнее",
-    footer_addr:"г. Душанбе, Таджикистан",
+    footer_addr:"г. Душанбе, ул. Ахмада Дониша, 5/1",
+    map_route:"Построить маршрут", map_google:"Открыть в Google Maps", map_yandex:"Открыть в Яндекс.Картах", map_2gis:"Открыть в 2GIS",
+    "cp.addr_full":"г. Душанбе, ул. Ахмада Дониша, 5/1, район Шохмансур",
 
     // Общие теги/города
     tag:{ cctv:"Видеонаблюдение", acs:"СКУД", queue:"Электронная очередь", alarm:"Сигнализация",
@@ -181,6 +184,7 @@ const I18N = {
     hero_btn1: "Машварат гирифтан", hero_btn2: "Дидани ҳалҳо",
     stat_years:"сол дар бозор", stat_projects:"лоиҳаҳои иҷрошуда",
     stat_engineers:"муҳандис дар даста", stat_support:"дастгирии техникӣ",
+    stat_years_work:"соли кори бомуваффақият", stat_clients:"муштариёни доимӣ",
 
     services_eyebrow:"Хизматрасониҳо", services_h:"Давраи пурраи корҳои муҳандисӣ ва IT",
     services_p:"Аз тарҳрезӣ то дастгирии техникӣ — масъулияти ягона барои инфрасохтори иншоот.",
@@ -255,7 +259,9 @@ const I18N = {
     q_ind_t:"Ҳалҳо аз рӯи соҳаҳо", q_ind_d:"Маҷмӯаҳо барои вазифаҳои тиҷорати шумо.",
     cookie_text:"Мо файлҳои cookie-ро истифода мебарем, то сайт дуруст ва қулай кор кунад. Бо идомаи истифода шумо розӣ мешавед.",
     cookie_ok:"Фаҳмо", cookie_more:"Муфассал",
-    footer_addr:"ш. Душанбе, Тоҷикистон",
+    footer_addr:"ш. Душанбе, кӯчаи Аҳмади Дониш, 5/1",
+    map_route:"Сохтани масир", map_google:"Кушодан дар Google Maps", map_yandex:"Кушодан дар Яндекс.Карта", map_2gis:"Кушодан дар 2GIS",
+    "cp.addr_full":"ш. Душанбе, кӯчаи Аҳмади Дониш, 5/1, ноҳияи Шоҳмансур",
 
     tag:{ cctv:"Видеокузатувӣ", acs:"СКУД", queue:"Навбати электронӣ", alarm:"Сигнализатсия",
       net:"Шабакаҳо", iptv:"IPTV", access:"Назорати дастрасӣ", wifi:"Wi-Fi", scs:"СКС", server:"Утоқи серверӣ",
@@ -320,6 +326,7 @@ const I18N = {
     hero_btn1: "Get a consultation", hero_btn2: "View solutions",
     stat_years:"years on the market", stat_projects:"completed projects",
     stat_engineers:"engineers on the team", stat_support:"technical support",
+    stat_years_work:"years of successful work", stat_clients:"loyal clients",
 
     services_eyebrow:"Services", services_h:"Full cycle of engineering and IT work",
     services_p:"From design to technical support — single responsibility for the facility's infrastructure.",
@@ -394,7 +401,9 @@ const I18N = {
     q_ind_t:"Industry solutions", q_ind_d:"Complexes tailored to your business.",
     cookie_text:"We use cookies to make the site work correctly and conveniently. By continuing to use the site, you agree to this.",
     cookie_ok:"Got it", cookie_more:"Learn more",
-    footer_addr:"Dushanbe, Tajikistan",
+    footer_addr:"Dushanbe, Akhmad Donish St., 5/1",
+    map_route:"Get directions", map_google:"Open in Google Maps", map_yandex:"Open in Yandex Maps", map_2gis:"Open in 2GIS",
+    "cp.addr_full":"Dushanbe, Akhmad Donish St. 5/1, Shohmansur district",
 
     tag:{ cctv:"CCTV", acs:"Access control", queue:"Electronic queue", alarm:"Alarm",
       net:"Networks", iptv:"IPTV", access:"Access control", wifi:"Wi-Fi", scs:"Structured cabling", server:"Server room",

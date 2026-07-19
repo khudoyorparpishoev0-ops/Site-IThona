@@ -25,8 +25,8 @@
 <!-- HEADER -->
 <header class="header">
   <div class="container header-inner">
-    <a href="index.html" class="logo">
-      <span class="mark"><span class="it">IT</span><span class="sep">-</span><span class="hona">HONA</span></span>
+    <a href="index.html" class="logo logo-brand" aria-label="IT-HONA — на главную">
+      <img src="assets/img/logo.svg" alt="IT-HONA" class="logo-img">
     </a>
     <nav class="nav">
       <a href="index.html" class="active" data-i18n="nav.home">Главная</a>
@@ -63,11 +63,33 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="solutions.html" class="btn btn-ghost" data-i18n="hero_btn2">Смотреть решения</a>
       </div>
-      <div class="hero-strip">
-        <div><div class="n" data-count="5">0</div><div class="l" data-i18n="stat_years">лет на рынке</div></div>
-        <div><div class="n" data-count="32" data-suffix="+">0</div><div class="l" data-i18n="stat_projects">реализованных проектов</div></div>
-        <div><div class="n" data-count="10" data-suffix="+">0</div><div class="l" data-i18n="stat_engineers">инженеров в команде</div></div>
-        <div><div class="n" data-count="24" data-suffix="/7">0</div><div class="l" data-i18n="stat_support">техническая поддержка</div></div>
+      <div class="stats-panel stats-panel--hero reveal">
+        <div class="stats-grid">
+          <div class="stat-card" style="--d:.05s">
+            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+            <div class="stat-n"><span data-count="32" data-suffix="+">0</span></div>
+            <span class="stat-dash"></span>
+            <div class="stat-l" data-i18n="stat_projects">реализованных проектов</div>
+          </div>
+          <div class="stat-card" style="--d:.15s">
+            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <div class="stat-n"><span data-count="5">0</span></div>
+            <span class="stat-dash"></span>
+            <div class="stat-l" data-i18n="stat_years_work">лет успешной работы</div>
+          </div>
+          <div class="stat-card" style="--d:.25s">
+            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div class="stat-n"><span data-count="50">0</span></div>
+            <span class="stat-dash"></span>
+            <div class="stat-l" data-i18n="stat_clients">постоянных клиентов</div>
+          </div>
+          <div class="stat-card" style="--d:.35s">
+            <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H4a1 1 0 0 1-1-1v-6a9 9 0 0 1 18 0v6a1 1 0 0 1-1 1h-2a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span>
+            <div class="stat-n"><span data-count="24" data-suffix="/7">0</span></div>
+            <span class="stat-dash"></span>
+            <div class="stat-l" data-i18n="stat_support">техническая поддержка</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -195,18 +217,40 @@
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> <span data-i18n="about_f3">Соблюдение сроков и нормативных требований</span></li>
       </ul>
     </div>
-    <div class="about-media reveal" style="background-image:linear-gradient(120deg,rgba(11,61,42,.4),rgba(37,42,45,.5)),url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80')"></div>
+    <img class="about-media reveal" src="assets/img/company-home.jpg" alt="Дата-центр IT-HONA: серверные стойки с подсветкой и коммутационными кабелями в машинном зале">
   </div>
 </section>
 
 <!-- STATS -->
 <section class="stats">
   <div class="container">
-    <div class="grid-4">
-      <div class="stat reveal"><div class="n"><span data-count="32" data-suffix="+">0</span></div><div class="l" data-i18n="stat_projects">Реализованных проектов</div></div>
-      <div class="stat reveal"><div class="n"><span data-count="5">0</span></div><div class="l" data-i18n="stat_years">Лет на рынке</div></div>
-      <div class="stat reveal"><div class="n"><span data-count="50">0</span></div><div class="l" data-i18n="stat_objects">Объектов на сопровождении</div></div>
-      <div class="stat reveal"><div class="n"><span data-count="24" data-suffix="/7">0</span></div><div class="l" data-i18n="stat_support">Техническая поддержка</div></div>
+    <div class="stats-panel reveal">
+      <div class="stats-grid">
+        <div class="stat-card" style="--d:.05s">
+          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          <div class="stat-n"><span data-count="32" data-suffix="+">0</span></div>
+          <span class="stat-dash"></span>
+          <div class="stat-l" data-i18n="stat_projects">реализованных проектов</div>
+        </div>
+        <div class="stat-card" style="--d:.15s">
+          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <div class="stat-n"><span data-count="5">0</span></div>
+          <span class="stat-dash"></span>
+          <div class="stat-l" data-i18n="stat_years_work">лет успешной работы</div>
+        </div>
+        <div class="stat-card" style="--d:.25s">
+          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div class="stat-n"><span data-count="50">0</span></div>
+          <span class="stat-dash"></span>
+          <div class="stat-l" data-i18n="stat_clients">постоянных клиентов</div>
+        </div>
+        <div class="stat-card" style="--d:.35s">
+          <span class="stat-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H4a1 1 0 0 1-1-1v-6a9 9 0 0 1 18 0v6a1 1 0 0 1-1 1h-2a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg></span>
+          <div class="stat-n"><span data-count="24" data-suffix="/7">0</span></div>
+          <span class="stat-dash"></span>
+          <div class="stat-l" data-i18n="stat_support">техническая поддержка</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
