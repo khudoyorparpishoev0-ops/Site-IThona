@@ -181,8 +181,109 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
   flex-wrap:wrap;gap:12px;font-size:13px;color:#8b938f}
 .v2 .ed-footer-bottom .sign{color:#149447;font-weight:600}
 
+/* ---------- подстраницы: page-hero ---------- */
+.v2 .ed-page-hero{padding:88px 0 72px}
+.v2 .ed-page-hero h1{margin:0 0 26px;font-size:clamp(42px,5vw,72px);font-weight:900;line-height:1;
+  letter-spacing:-.04em;color:#252A2D;max-width:820px}
+.v2 .ed-page-hero h1 .dot{color:#149447}
+.v2 .ed-page-hero .sub{margin:0;font-size:18px;line-height:1.6;max-width:560px}
+.v2 .ed-page-hero.tight{padding-bottom:0}
+
+/* ---------- тёмно-зелёная полоса статистики ---------- */
+.v2 .ed-statsband{background:#0B3D2A;color:#fff;padding:72px 0}
+.v2 .ed-statsband-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.v2 .ed-bstat{padding:8px 36px 8px 28px;border-left:1px solid rgba(255,255,255,.18)}
+.v2 .ed-bstat .n{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}
+.v2 .ed-bstat .n .acc{color:#2fce74}
+.v2 .ed-bstat .l{font-size:13px;color:rgba(255,255,255,.7);margin-top:8px}
+
+/* ---------- сетка отраслей ---------- */
+.v2 .ed-inds{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.v2 .ed-ind{padding:28px 24px;border-bottom:1px solid #E2E6E4;border-left:1px solid #E2E6E4}
+.v2 .ed-ind:first-child{padding-left:0;border-left:none}
+.v2 .ed-ind .ed-num{display:block;margin-bottom:10px}
+.v2 .ed-ind .t{font-size:18px;font-weight:700;color:#252A2D}
+
+/* ---------- тёмная CTA-полоса ---------- */
+.v2 .ed-cta{background:#252A2D;padding:80px 0}
+.v2 .ed-cta-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
+.v2 .ed-cta h2{margin:0;font-size:clamp(26px,3vw,40px);font-weight:900;letter-spacing:-.03em;color:#fff}
+.v2 .ed-cta h2 .q{color:#2fce74}
+.v2 .ed-btn--green{background:#149447}
+.v2 .ed-btn--green:hover{background:#0f7d3b}
+
+/* ---------- контакты (светлая страница) ---------- */
+.v2 .ed-crows--light{border-top:2px solid #252A2D}
+.v2 .ed-crows--light .ed-crow{color:#252A2D;border-bottom:1px solid #E2E6E4;font-size:20px;font-weight:800;
+  letter-spacing:-.01em;padding:20px 0}
+.v2 .ed-crows--light .ed-crow .lbl{color:#8b938f}
+.v2 .ed-crows--light a.ed-crow:hover{color:#149447}
+.v2 .ed-crows--light .ed-crow.addr{font-size:17px}
+.v2 .ed-contact-note{margin:28px 0 0;font-size:14.5px;color:#8b938f;max-width:400px}
+.v2 .ed-form--gray{background:#F3F5F4}
+.v2 .ed-form--gray input,.v2 .ed-form--gray textarea{background:#fff}
+.v2 .ed-form-wrap .form-done--gray{background:#F3F5F4}
+/* тёмная секция «Как нас найти» */
+.v2 .ed-findus{background:#252A2D;color:#fff}
+.v2 .ed-findus .ed-sechead{border-bottom-color:rgba(255,255,255,.25);margin-bottom:48px}
+.v2 .ed-findus .ed-h2{color:#fff}
+.v2 .ed-findus .ed-h2 .dot{color:#2fce74}
+.v2 .ed-findus .ed-note{color:rgba(255,255,255,.55)}
+
+/* ---------- Услуги: список ---------- */
+.v2 .ed-svclist{border-top:2px solid #252A2D}
+.v2 .ed-svcrow{display:grid;grid-template-columns:80px .8fr 1.2fr;gap:28px;padding:34px 0;border-bottom:1px solid #E2E6E4}
+.v2 .ed-svcrow .num{font-size:14px;font-weight:700;color:#149447;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.v2 .ed-svcrow .t{font-size:22px;font-weight:800;letter-spacing:-.02em;color:#252A2D;line-height:1.25}
+.v2 .ed-svcrow .d{display:block;font-size:15.5px;color:#3A4145;margin-bottom:14px;max-width:560px}
+.v2 .ed-chips{display:flex;flex-wrap:wrap;gap:7px}
+.v2 .ed-chip{font-size:12.5px;font-weight:500;color:#252A2D;border:1px solid #E2E6E4;padding:5px 11px}
+/* этапы работы */
+.v2 .ed-steps-sec{background:#F3F5F4}
+.v2 .ed-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.v2 .ed-step{background:#fff;padding:28px 26px;border-top:3px solid #149447}
+.v2 .ed-step .num{font-size:13px;font-weight:700;color:#149447;font-family:ui-monospace,'SF Mono',Menlo,monospace;margin-bottom:14px}
+.v2 .ed-step .t{font-size:18px;font-weight:800;letter-spacing:-.01em;color:#252A2D;margin-bottom:8px}
+.v2 .ed-step .d{font-size:14px;color:#3A4145}
+
+/* ---------- Решения: список ---------- */
+.v2 .ed-sollist{display:flex;flex-direction:column;gap:0;border-top:2px solid #252A2D}
+.v2 .ed-solrow{display:grid;grid-template-columns:80px 1fr 1.2fr;gap:28px;padding:44px 0;border-bottom:1px solid #E2E6E4}
+.v2 .ed-solrow .num{font-size:14px;font-weight:700;color:#149447;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.v2 .ed-solrow .t{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:#252A2D;line-height:1.2;margin-bottom:10px}
+.v2 .ed-solrow .d{display:block;font-size:15.5px;color:#3A4145;max-width:380px}
+.v2 .ed-sol-items{display:flex;flex-direction:column;border-left:1px solid #E2E6E4;padding-left:28px}
+.v2 .ed-sol-items span{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #F3F5F4;
+  font-size:14.5px;font-weight:600;color:#252A2D}
+.v2 .ed-sol-items span::before{content:"→";color:#149447;font-weight:800}
+/* CTA с подзаголовком на тёмно-зелёном */
+.v2 .ed-cta--green{background:#0B3D2A}
+.v2 .ed-cta--green .sub{margin:8px 0 0;font-size:15.5px;color:rgba(255,255,255,.75)}
+
+/* ---------- Партнёры: группы ---------- */
+.v2 .ed-brandgroups{display:flex;flex-direction:column;gap:64px}
+.v2 .ed-brandgroup .head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;
+  border-bottom:2px solid #252A2D;padding-bottom:14px}
+.v2 .ed-brandgroup .head h2{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em;color:#252A2D}
+.v2 .ed-brandgroup .head .num{font-size:13px;font-weight:600;color:#8b938f}
+.v2 .ed-brandrow{display:grid;grid-template-columns:repeat(4,1fr)}
+.v2 .ed-brandrow .cell{aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;
+  padding:22px 28px;border-bottom:1px solid #E2E6E4;border-right:1px solid #E2E6E4}
+.v2 .ed-brandrow .cell:nth-child(4n){border-right:none}
+.v2 .ed-brandrow .cell img{max-height:40px;max-width:100%;width:auto;object-fit:contain;
+  filter:grayscale(1);opacity:.55;transition:filter .3s,opacity .3s}
+.v2 .ed-brandrow .cell:hover img{filter:grayscale(0);opacity:1}
+
 /* ---------- адаптив ---------- */
 @media(max-width:1060px){
+  .v2 .ed-statsband-grid{grid-template-columns:1fr 1fr;gap:28px 0}
+  .v2 .ed-inds{grid-template-columns:1fr 1fr}
+  .v2 .ed-ind:nth-child(odd){padding-left:0;border-left:none}
+  .v2 .ed-steps{grid-template-columns:1fr 1fr}
+  .v2 .ed-svcrow{grid-template-columns:56px 1fr;gap:8px 20px}
+  .v2 .ed-svcrow .d-wrap{grid-column:1/-1;padding-left:76px}
+  .v2 .ed-solrow{grid-template-columns:56px 1fr;gap:14px 20px}
+  .v2 .ed-sol-items{grid-column:1/-1;border-left:none;padding-left:76px}
   .v2 .ed-hero-grid{grid-template-columns:1fr;gap:40px}
   .v2 .ed-hero-media{min-height:420px}
   .v2 .ed-hero-badge{left:0}
@@ -200,6 +301,18 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 @media(max-width:680px){
   .v2 .header-phone{display:none}
   .v2 .container{padding:0 20px}
+  .v2 .ed-page-hero{padding:48px 0 44px}
+  .v2 .ed-statsband{padding:48px 0}
+  .v2 .ed-statsband-grid{grid-template-columns:1fr;gap:22px}
+  .v2 .ed-bstat{padding:0 0 0 20px}
+  .v2 .ed-inds{grid-template-columns:1fr}
+  .v2 .ed-ind{padding:20px 0;border-left:none}
+  .v2 .ed-crows--light .ed-crow{font-size:17px;flex-wrap:wrap}
+  .v2 .ed-steps{grid-template-columns:1fr}
+  .v2 .ed-brandrow{grid-template-columns:repeat(2,1fr)}
+  .v2 .ed-brandrow .cell:nth-child(4n){border-right:1px solid #E2E6E4}
+  .v2 .ed-brandrow .cell:nth-child(2n){border-right:none}
+  .v2 .ed-svcrow .d-wrap,.v2 .ed-sol-items{padding-left:0}
   .v2 section{padding:64px 0}
   .v2 .ed-hero{padding:40px 0 0}
   .v2 .ed-hero h1{font-size:clamp(40px,11vw,56px)}
