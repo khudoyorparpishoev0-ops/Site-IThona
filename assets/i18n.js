@@ -70,6 +70,10 @@ const I18N = {
     v2_partners_cta:"Нужна поставка оборудования",
     v2_contact_note:"Работаем по Душанбе и всему Таджикистану. Выезд инженера на объект — бесплатно.",
     v2_findus_h:"Как нас найти",
+    v2_band_svc:"Монтаж и инженерная инфраструктура «под ключ»",
+    v2_band_sol:"Один проект — все системы объекта",
+    v2_band_partners:"Сертифицированные поставки по всему миру",
+    v2_band_contacts:"Выезд инженера на объект — бесплатно",
 
     services_eyebrow:"Услуги", services_h:"Полный цикл инженерных и IT-работ",
     services_p:"От проектирования до технического сопровождения — единая ответственность за инфраструктуру объекта.",
@@ -253,6 +257,10 @@ const I18N = {
     v2_partners_cta:"Ба таъмини таҷҳизот ниёз доред",
     v2_contact_note:"Дар Душанбе ва тамоми Тоҷикистон кор мекунем. Ташрифи муҳандис ба иншоот — ройгон.",
     v2_findus_h:"Чӣ тавр моро ёфтан мумкин аст",
+    v2_band_svc:"Васл ва инфраструктураи муҳандисӣ «зери калид»",
+    v2_band_sol:"Як лоиҳа — ҳамаи системаҳои иншоот",
+    v2_band_partners:"Таъминоти сертификатсияшуда дар саросари ҷаҳон",
+    v2_band_contacts:"Ташрифи муҳандис ба иншоот — ройгон",
 
     services_eyebrow:"Хизматрасониҳо", services_h:"Давраи пурраи корҳои муҳандисӣ ва IT",
     services_p:"Аз тарҳрезӣ то дастгирии техникӣ — масъулияти ягона барои инфрасохтори иншоот.",
@@ -429,6 +437,10 @@ const I18N = {
     v2_partners_cta:"Need equipment supply",
     v2_contact_note:"We work across Dushanbe and all of Tajikistan. On-site engineer visit is free.",
     v2_findus_h:"How to find us",
+    v2_band_svc:"Turnkey installation and engineering infrastructure",
+    v2_band_sol:"One project — all facility systems",
+    v2_band_partners:"Certified supply worldwide",
+    v2_band_contacts:"On-site engineer visit is free",
 
     services_eyebrow:"Services", services_h:"Full cycle of engineering and IT work",
     services_p:"From design to technical support — single responsibility for the facility's infrastructure.",

@@ -230,6 +230,21 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 .v2 .ed-findus .ed-h2 .dot{color:#2fce74}
 .v2 .ed-findus .ed-note{color:rgba(255,255,255,.55)}
 
+/* ---------- page-hero с фото справа (текст + изображение) ---------- */
+.v2 .ed-page-hero--split{padding:72px 0}
+.v2 .ed-page-hero--split .container{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.v2 .ed-hero-txt .sub{margin-top:0}
+.v2 .ed-hero-photo{position:relative;min-height:380px;align-self:stretch}
+.v2 .ed-hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.v2 .ed-hero-photo .tag{position:absolute;left:-20px;bottom:34px;background:#149447;color:#fff;
+  padding:14px 20px;font-size:12.5px;font-weight:600;line-height:1.5;max-width:220px}
+
+/* широкая фотополоса между секциями */
+.v2 .ed-imgband{height:400px;overflow:hidden;position:relative}
+.v2 .ed-imgband img{width:100%;height:100%;object-fit:cover;display:block}
+.v2 .ed-imgband .tag{position:absolute;left:0;bottom:0;background:#149447;color:#fff;
+  padding:14px 22px;font-size:13px;font-weight:600}
+
 /* ---------- Услуги: список ---------- */
 .v2 .ed-svclist{border-top:2px solid #252A2D}
 .v2 .ed-svcrow{display:grid;grid-template-columns:80px .8fr 1.2fr;gap:28px;padding:34px 0;border-bottom:1px solid #E2E6E4}
@@ -276,6 +291,11 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 
 /* ---------- адаптив ---------- */
 @media(max-width:1060px){
+  .v2 .ed-page-hero--split .container{grid-template-columns:1fr;gap:36px}
+  .v2 .ed-hero-photo{min-height:0}
+  .v2 .ed-hero-photo img{position:static;height:320px}
+  .v2 .ed-hero-photo .tag{left:0}
+  .v2 .ed-imgband{height:300px}
   .v2 .ed-statsband-grid{grid-template-columns:1fr 1fr;gap:28px 0}
   .v2 .ed-inds{grid-template-columns:1fr 1fr}
   .v2 .ed-ind:nth-child(odd){padding-left:0;border-left:none}
