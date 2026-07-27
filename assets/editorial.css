@@ -348,6 +348,9 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
   .v2 .ed-map{height:320px}
   .v2 .ed-crow{font-size:16px;flex-wrap:wrap}
   .v2 .ed-footer-grid{grid-template-columns:1fr}
+  .v2 .ed-footer-grid > div:first-child{text-align:center}
+  .v2 .ed-footer-grid > div:first-child img{margin-left:auto;margin-right:auto}
+  .v2 .ed-footer-grid > div:first-child .desc{margin-left:auto;margin-right:auto}
   .v2 .ed-form{padding:28px 22px}
   .v2 .ed-hero-badge{position:static;margin-top:0;max-width:none;display:block}
   .v2 .ed-hero-media{display:flex;flex-direction:column;min-height:0}
