@@ -83,9 +83,9 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 .v2 .ed-about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
 .v2 .ed-about-media{position:relative}
 .v2 .ed-about-media img{width:100%;height:auto;display:block}
-.v2 .ed-about-badge{position:absolute;right:-18px;top:40px;background:#252A2D;color:#fff;padding:16px 20px;
+.v2 .ed-about-badge{position:absolute;right:-18px;top:40px;background:#149447;color:#fff;padding:16px 20px;
   font-size:26px;font-weight:800;letter-spacing:-.02em}
-.v2 .ed-about-badge small{font-size:13px;font-weight:600;color:rgba(255,255,255,.7)}
+.v2 .ed-about-badge small{font-size:13px;font-weight:600;color:rgba(255,255,255,.85)}
 .v2 .ed-kicker{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
 .v2 .ed-kicker::after{content:"";flex:1;height:1px;background:#D5DAD7;display:block}
 .v2 .ed-about h2{margin:0 0 24px}
