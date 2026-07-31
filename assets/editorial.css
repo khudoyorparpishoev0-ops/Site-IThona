@@ -150,6 +150,8 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 .v2 .form-done .ok{width:64px;height:64px;background:#e7f6ed;display:flex;align-items:center;justify-content:center}
 .v2 .form-done .t{font-size:21px;font-weight:800;color:#252A2D;letter-spacing:-.01em}
 .v2 .form-done p{margin:0;font-size:15px;color:#3A4145}
+/* атрибут hidden должен побеждать display:flex выше */
+.v2 .ed-form[hidden],.v2 .form-done[hidden]{display:none}
 .v2 .form-again{margin-top:8px;background:none;border:none;color:#149447;font-family:inherit;font-size:14px;
   font-weight:600;cursor:pointer;border-bottom:1.5px solid #149447;padding:0 0 2px}
 /* карта */
