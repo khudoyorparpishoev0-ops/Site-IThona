@@ -110,6 +110,7 @@ const I18N = {
     form_contact:"Телефон или email", form_contact_ph:"+992 __ ___ __ __",
     form_msg:"Сообщение", form_msg_ph:"Кратко опишите задачу",
     form_submit:"Отправить заявку", form_sent:"Заявка отправлена ✓",
+    form_sending:"Отправляем…", form_error:"Не удалось отправить заявку. Попробуйте ещё раз.",
     work_time:"Пн–Пт, 9:00–18:00",
 
     footer_desc:"Системный IT-интегратор полного цикла. Проектируем, внедряем и сопровождаем инженерные и IT-системы.",
@@ -297,6 +298,7 @@ const I18N = {
     form_contact:"Телефон ё email", form_contact_ph:"+992 __ ___ __ __",
     form_msg:"Паём", form_msg_ph:"Вазифаро мухтасар тавсиф кунед",
     form_submit:"Дархост фиристодан", form_sent:"Дархост фиристода шуд ✓",
+    form_sending:"Фиристода истодаем…", form_error:"Дархост фиристода нашуд. Лутфан, бори дигар кӯшиш кунед.",
     work_time:"Душ–Ҷум, 9:00–18:00",
 
     footer_desc:"Интегратори системавии IT-и давраи пурра. Мо системаҳои муҳандисӣ ва IT-ро тарҳрезӣ, ҷорӣ ва дастгирӣ мекунем.",
@@ -477,6 +479,7 @@ const I18N = {
     form_contact:"Phone or email", form_contact_ph:"+992 __ ___ __ __",
     form_msg:"Message", form_msg_ph:"Briefly describe your task",
     form_submit:"Send request", form_sent:"Request sent ✓",
+    form_sending:"Sending…", form_error:"Could not send your request. Please try again.",
     work_time:"Mon–Fri, 9:00–18:00",
 
     footer_desc:"Full-cycle system IT integrator. We design, deploy and support engineering and IT systems.",
@@ -569,6 +572,10 @@ const I18N = {
 };
 
 // текущий язык
+// const-объявления не попадают в window — пробрасываем явно, их читает main.js
+window.CONTACTS = CONTACTS;
+window.I18N = I18N;
+
 function getLang(){
   const saved = localStorage.getItem('ithona_lang');
   if(saved && I18N[saved]) return saved;

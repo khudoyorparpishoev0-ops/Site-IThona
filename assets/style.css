@@ -509,6 +509,7 @@ form.appeal textarea{resize:vertical;min-height:100px}
 .ith-submit{background:var(--green);color:#fff;border:none;border-radius:8px;padding:13px;font-family:inherit;
   font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:2px}
 .ith-submit:hover{background:#0f7d3b}
+.ith-submit:disabled{opacity:.6;cursor:default}
 .ith-success{text-align:center;padding:30px 10px;color:var(--green)}
 .ith-success svg{color:var(--green)}
 .ith-success p{margin-top:12px;font-size:16px;font-weight:600;color:var(--graphite)}

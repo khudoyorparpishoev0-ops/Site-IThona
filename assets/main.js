@@ -78,6 +78,10 @@
       const btn = form.querySelector('button[type="submit"]');
       const labelIdle = (dict && dict.form_submit) || 'Отправить заявку';
       const labelSent = (dict && dict.form_sent) || 'Заявка отправлена ✓';
+      const labelSending = (dict && dict.form_sending) || 'Отправляем…';
+      const textError = (dict && dict.form_error) || 'Не удалось отправить заявку. Попробуйте ещё раз.';
+
+      if(!btn || btn.disabled) return; // отправка уже идёт — второй раз не запускаем
 
       // honeypot
       if(form.elements['website'] && form.elements['website'].value) return;
@@ -95,11 +99,37 @@
       if(!rateOk()) return;
 
       const CT = window.CONTACTS || {};
+
+      // строка ошибки — создаём один раз, держим прямо над кнопкой
+      let errBox = form.querySelector('.form-err');
+      if(!errBox){
+        errBox = document.createElement('div');
+        errBox.className = 'form-err';
+        errBox.setAttribute('role', 'alert');
+        btn.parentNode.insertBefore(errBox, btn);
+      }
+      errBox.hidden = true;
+
+      // на время отправки кнопка заблокирована и показывает «Отправляем…»
+      const setBusy = (busy) => {
+        btn.disabled = busy;
+        btn.textContent = busy ? labelSending : labelIdle;
+      };
+
+      // ошибка: форма остаётся открытой, лимит сбрасываем — чтобы можно было повторить сразу
+      const fail = () => {
+        localStorage.removeItem('ith_last_send');
+        errBox.textContent = textError;
+        errBox.hidden = false;
+        setBusy(false);
+      };
+
       const done = () => {
         // если рядом есть панель успеха (новый дизайн) — показываем её вместо формы
         const wrap = form.closest('.ed-form-wrap');
         const donePanel = wrap && wrap.querySelector('.form-done');
         form.reset();
+        setBusy(false);
         if(donePanel){
           form.hidden = true;
           donePanel.hidden = false;
@@ -117,21 +147,30 @@
       const text = lines.join('\n');
 
       if(CT.formEndpoint){
-        // отправка на backend/Formspree — заявка приходит на почту без открытия WhatsApp
-        btn.disabled = true;
+        // ждём подтверждения от сервера; «Заявка отправлена» — только при успехе
+        setBusy(true);
         try{
           const res = await fetch(CT.formEndpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify({ name, contact, email, message, page: location.pathname })
           });
-          btn.disabled = false;
-          if(res.ok){ done(); return; }
-        }catch(_){ btn.disabled = false; }
-        // если endpoint недоступен — не теряем заявку, уводим в WhatsApp
+          let ok = res.ok;
+          // если сервер ответил JSON — верим его вердикту (в т.ч. по доставке SMS)
+          if(ok){
+            try{
+              const data = await res.clone().json();
+              if(data && (data.ok === false || data.success === false || data.error)) ok = false;
+            }catch(_){ /* ответ не JSON — ориентируемся на HTTP-статус */ }
+          }
+          if(ok) done(); else fail();
+        }catch(_){
+          fail(); // сеть недоступна или запрос не дошёл
+        }
+        return;
       }
 
-      // резерв (или основной путь без endpoint): WhatsApp с автозаполнением
+      // endpoint не задан: единственный канал доставки — WhatsApp с автозаполнением
       if(CT.whatsapp){
         window.open('https://wa.me/' + CT.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
       }

@@ -129,6 +129,8 @@
     const f = e.target;
     const err = f.querySelector('.ith-err');
     err.hidden = true;
+    const btn = f.querySelector('.ith-submit');
+    if(btn && btn.disabled) return; // отправка уже идёт — второй раз не запускаем
     // honeypot
     if(f.website.value){ return; }
     // required
@@ -158,26 +160,50 @@
       if(f.topic.value){ payload.topic = f.topic.value; lines.push('Тема: '+f.topic.value); }
     }
 
+    const labelIdle = btn ? btn.textContent : '';
+    // на время отправки кнопка заблокирована и показывает «Отправляем…»
+    const setBusy = (busy) => {
+      if(!btn) return;
+      btn.disabled = busy;
+      btn.textContent = busy ? (d.form_sending || 'Отправляем…') : labelIdle;
+    };
+    // ошибка: форма остаётся открытой, лимит сбрасываем — чтобы можно было повторить сразу
+    const fail = () => {
+      localStorage.removeItem('ith_last_send');
+      err.textContent = d.form_error || 'Не удалось отправить заявку. Попробуйте ещё раз.';
+      err.hidden = false;
+      setBusy(false);
+    };
     const success = () => {
       body.innerHTML = `<div class="ith-success">${svg.chat}<p>${d.form_sent}</p></div>`;
       setTimeout(()=>{ if(!panel.hidden) renderMenu(); }, 2500);
     };
 
-    // 1) Если задан endpoint — отправляем на почту/backend без открытия мессенджера
+    // 1) Если задан endpoint — ждём подтверждения сервера, успех показываем только при нём
     if(CONTACTS.formEndpoint){
-      const btn = f.querySelector('.ith-submit'); if(btn) btn.disabled = true;
+      setBusy(true);
       try{
         const res = await fetch(CONTACTS.formEndpoint, {
           method:'POST',
           headers:{ 'Content-Type':'application/json', 'Accept':'application/json' },
           body: JSON.stringify(payload)
         });
-        if(res.ok){ success(); return; }
-      }catch(_){ /* endpoint недоступен — уходим в резервный канал */ }
-      if(btn) btn.disabled = false;
+        let ok = res.ok;
+        // если сервер ответил JSON — верим его вердикту (в т.ч. по доставке SMS)
+        if(ok){
+          try{
+            const data = await res.clone().json();
+            if(data && (data.ok === false || data.success === false || data.error)) ok = false;
+          }catch(_){ /* ответ не JSON — ориентируемся на HTTP-статус */ }
+        }
+        if(ok) success(); else fail();
+      }catch(_){
+        fail(); // сеть недоступна или запрос не дошёл
+      }
+      return;
     }
 
-    // 2) Резерв (или основной путь без endpoint): WhatsApp/Telegram с автозаполнением
+    // 2) Без endpoint единственный канал доставки — WhatsApp/Telegram с автозаполнением
     const text = encodeURIComponent(lines.join('\n'));
     const method = kind==='message' ? f.method.value : 'any';
     if(method==='tg' && CONTACTS.telegram){ window.open(`https://t.me/${CONTACTS.telegram}?text=${text}`,'_blank'); }
