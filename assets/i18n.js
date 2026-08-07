@@ -623,3 +623,12 @@ function applyLang(l){
   if(window.__rebuildWidget) window.__rebuildWidget(d);
   document.dispatchEvent(new CustomEvent('langchange',{detail:{lang:l, dict:d}}));
 }
+
+// переключатель языка — элементы <a> без href: делаем их доступными с клавиатуры
+document.querySelectorAll('[data-lang]').forEach(a=>{
+  a.setAttribute('role','button');
+  a.tabIndex = 0;
+  a.addEventListener('keydown', e=>{
+    if(e.key==='Enter' || e.key===' '){ e.preventDefault(); a.click(); }
+  });
+});

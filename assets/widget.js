@@ -206,14 +206,14 @@
     // 2) Без endpoint единственный канал доставки — WhatsApp/Telegram с автозаполнением
     const text = encodeURIComponent(lines.join('\n'));
     const method = kind==='message' ? f.method.value : 'any';
-    if(method==='tg' && CONTACTS.telegram){ window.open(`https://t.me/${CONTACTS.telegram}?text=${text}`,'_blank'); }
-    else { window.open(`https://wa.me/${CONTACTS.whatsapp}?text=${text}`,'_blank'); }
+    if(method==='tg' && CONTACTS.telegram){ window.open(`https://t.me/${CONTACTS.telegram}?text=${text}`,'_blank','noopener'); }
+    else { window.open(`https://wa.me/${CONTACTS.whatsapp}?text=${text}`,'_blank','noopener'); }
     success();
   }
 
-  function openWA(){ window.open(`https://wa.me/${CONTACTS.whatsapp}`,'_blank'); }
+  function openWA(){ window.open(`https://wa.me/${CONTACTS.whatsapp}`,'_blank','noopener'); }
   function openTG(){
-    if(CONTACTS.telegram){ window.open(`https://t.me/${CONTACTS.telegram}`,'_blank'); }
+    if(CONTACTS.telegram){ window.open(`https://t.me/${CONTACTS.telegram}`,'_blank','noopener'); }
     else { location.href='tel:'+CONTACTS.phone; }
   }
 

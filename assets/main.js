@@ -11,12 +11,26 @@
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav');
   if(burger && nav){
-    burger.addEventListener('click', () => nav.classList.toggle('open'));
-    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>nav.classList.remove('open')));
+    const setOpen = (open) => {
+      nav.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      // блокируем прокрутку страницы под открытым меню
+      document.documentElement.classList.toggle('menu-open', open);
+    };
+    burger.setAttribute('aria-expanded', 'false');
+    burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', ()=>setOpen(false)));
     // тап по затемнённой области закрывает меню
     document.addEventListener('click', (e) => {
       if(nav.classList.contains('open') && !nav.contains(e.target) && !burger.contains(e.target)){
-        nav.classList.remove('open');
+        setOpen(false);
+      }
+    });
+    // Escape закрывает меню, фокус возвращается на бургер
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape' && nav.classList.contains('open')){
+        setOpen(false);
+        burger.focus();
       }
     });
   }
@@ -172,7 +186,7 @@
 
       // endpoint не задан: единственный канал доставки — WhatsApp с автозаполнением
       if(CT.whatsapp){
-        window.open('https://wa.me/' + CT.whatsapp + '?text=' + encodeURIComponent(text), '_blank');
+        window.open('https://wa.me/' + CT.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
       }
       done();
     });

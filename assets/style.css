@@ -5,7 +5,8 @@
    Font: Inter
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* Шрифт Inter подключается <link>-ом в <head> каждой страницы —
+   дублирующий @import удалён (он загружал CSS шрифтов второй раз). */
 
 :root{
   --green:#149447;
@@ -27,7 +28,8 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:96px} /* якоря не прячутся под фиксированным header */
+html.menu-open,html.menu-open body{overflow:hidden} /* scroll-lock под открытым мобильным меню */
 body{
   font-family:'Inter',system-ui,sans-serif;
   color:var(--text);
@@ -141,7 +143,7 @@ a.contact-item:focus-visible{outline:2px solid rgba(39,217,104,.5);outline-offse
 .lang{display:flex;gap:6px;font-size:14px;font-weight:600}
 .lang a{color:#9aa3a0}
 .lang a.on{color:var(--graphite)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:10px} /* touch-target ≥44px */
 .burger span{width:24px;height:2px;background:var(--graphite);transition:.25s}
 
 /* ---------- Hero ---------- */

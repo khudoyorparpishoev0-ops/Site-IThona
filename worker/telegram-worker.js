@@ -32,9 +32,28 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: cors });
     if (request.method !== 'POST') return reply({ ok: false, error: 'method' }, 405, cors);
 
+    // браузерный запрос с чужого сайта отклоняем до какой-либо обработки
+    // (запросы без Origin — например, серверные проверки — пропускаем дальше)
+    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+      return reply({ ok: false, error: 'origin' }, 403, cors);
+    }
+
+    // разумный предел размера заявки — защита от гигантских payload
+    const MAX_BODY = 64 * 1024;
+    if (Number(request.headers.get('Content-Length') || 0) > MAX_BODY) {
+      return reply({ ok: false, error: 'too_large' }, 413, cors);
+    }
+
     let data;
-    try { data = await request.json(); }
-    catch { return reply({ ok: false, error: 'bad_json' }, 400, cors); }
+    try {
+      const raw = await request.text();
+      if (raw.length > MAX_BODY) return reply({ ok: false, error: 'too_large' }, 413, cors);
+      data = JSON.parse(raw);
+    } catch { return reply({ ok: false, error: 'bad_json' }, 400, cors); }
+
+    // honeypot: скрытое поле website заполняют только боты —
+    // отвечаем «успехом», но ничего не отправляем
+    if (data.website) return reply({ ok: true }, 200, cors);
 
     const cut = (v, n) => String(v == null ? '' : v).trim().slice(0, n);
     const name    = cut(data.name, 100);

@@ -30,6 +30,9 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 /* ---------- hero ---------- */
 .v2 .ed-hero{padding:72px 0 0;overflow:hidden}
 .v2 .ed-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:stretch}
+/* колонки грида могут сжиматься уже min-content — длинные слова не распирают макет */
+.v2 .ed-hero-grid>*,.v2 .ed-page-hero--split .container>*{min-width:0}
+.v2 .ed-hero h1,.v2 .ed-page-hero h1{overflow-wrap:break-word}
 .v2 .ed-hero-left{display:flex;flex-direction:column;animation:fadeUp .7s cubic-bezier(.22,.61,.36,1) both}
 .v2 .ed-eyebrow{font-size:12.5px;font-weight:600;color:#8b938f;margin-bottom:26px;display:flex;gap:12px;align-items:center}
 .v2 .ed-eyebrow::before{content:"";width:40px;height:1.5px;background:#149447;display:inline-block;flex:none}
@@ -113,7 +116,7 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
 .v2 .ed-tag{font-size:12px;font-weight:500;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.25);padding:5px 11px}
 
 /* ---------- 05 Партнёры ---------- */
-.v2 .ed-partners-grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.v2 .ed-partners-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
 .v2 .ed-brand{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:20px 26px;
   border-bottom:1px solid #E2E6E4;border-right:1px solid #E2E6E4}
 .v2 .ed-brand img{max-height:36px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.5;
@@ -284,7 +287,7 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
   border-bottom:2px solid #252A2D;padding-bottom:14px}
 .v2 .ed-brandgroup .head h2{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em;color:#252A2D}
 .v2 .ed-brandgroup .head .num{font-size:13px;font-weight:600;color:#8b938f}
-.v2 .ed-brandrow{display:grid;grid-template-columns:repeat(4,1fr)}
+.v2 .ed-brandrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 .v2 .ed-brandrow .cell{aspect-ratio:16/8;display:flex;align-items:center;justify-content:center;
   padding:22px 28px;border-bottom:1px solid #E2E6E4;border-right:1px solid #E2E6E4}
 .v2 .ed-brandrow .cell:nth-child(4n){border-right:none}
@@ -317,14 +320,23 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
   .v2 .ed-about-badge{right:0}
   .v2 .ed-sol-grid{grid-template-columns:1fr;gap:36px}
   .v2 .ed-sol-card{padding-right:0}
-  .v2 .ed-partners-grid{grid-template-columns:repeat(3,1fr)}
+  .v2 .ed-partners-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .v2 .ed-contacts-grid{grid-template-columns:1fr;gap:48px}
   .v2 .ed-footer-grid{grid-template-columns:repeat(3,1fr);gap:28px}
 }
+/* уважение к prefers-reduced-motion: отключаем входные анимации и плавный скролл */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .v2 .ed-hero-left,.v2 .ed-hero-media{animation:none}
+}
+
 @media(max-width:680px){
   .v2 .header-phone{display:none}
   .v2 .container{padding:0 20px}
-  .v2 .ed-page-hero{padding:48px 0 44px}
+  /* верхний отступ ≥ высоты фиксированного header (74px), иначе первая строка прячется под ним */
+  .v2 .ed-page-hero{padding:92px 0 44px}
+  /* длинные русские слова («производителей») должны помещаться на 320–430px */
+  .v2 .ed-page-hero h1{font-size:clamp(28px,9.2vw,42px)}
   .v2 .ed-statsband{padding:48px 0}
   .v2 .ed-statsband-grid{grid-template-columns:1fr;gap:22px}
   .v2 .ed-bstat{padding:0 0 0 20px}
@@ -332,22 +344,23 @@ body.v2{font-family:'Inter',system-ui,sans-serif;color:#3A4145;background:#fff;l
   .v2 .ed-ind{padding:20px 0;border-left:none}
   .v2 .ed-crows--light .ed-crow{font-size:17px;flex-wrap:wrap}
   .v2 .ed-steps{grid-template-columns:1fr}
-  .v2 .ed-brandrow{grid-template-columns:repeat(2,1fr)}
+  .v2 .ed-brandrow{grid-template-columns:repeat(2,minmax(0,1fr))}
   .v2 .ed-brandrow .cell:nth-child(4n){border-right:1px solid #E2E6E4}
   .v2 .ed-brandrow .cell:nth-child(2n){border-right:none}
   .v2 .ed-svcrow .d-wrap,.v2 .ed-sol-items{padding-left:0}
   .v2 section{padding:64px 0}
-  .v2 .ed-hero{padding:40px 0 0}
-  .v2 .ed-hero h1{font-size:clamp(40px,11vw,56px)}
+  .v2 .ed-hero{padding:92px 0 0} /* просвет под фиксированный header */
+  .v2 .ed-hero h1{font-size:clamp(28px,9.2vw,56px)} /* «инфраструктура.» помещается на 320–430px */
   .v2 .ed-stats{flex-direction:column}
   .v2 .ed-stat{padding:16px 0!important;border-left:none!important;border-top:1px solid #E2E6E4}
   .v2 .ed-stat:first-child{border-top:none}
   .v2 .ed-dirs-grid{grid-template-columns:1fr}
+  .v2 .ed-dir{gap:14px;padding-right:8px}
   .v2 .ed-sechead{flex-direction:column;align-items:flex-start;gap:6px}
   .v2 .ed-note{white-space:normal}
   .v2 .ed-svc-item{grid-template-columns:48px 1fr}
   .v2 .ed-svc-photo{height:300px}
-  .v2 .ed-partners-grid{grid-template-columns:repeat(2,1fr)}
+  .v2 .ed-partners-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .v2 .ed-map{height:320px}
   .v2 .ed-crow{font-size:16px;flex-wrap:wrap}
   .v2 .ed-footer-grid{grid-template-columns:1fr}
