@@ -18,11 +18,13 @@
 | 1.1 | Создать бота у @BotFather → получить `BOT_TOKEN`. Создать группу для заявок, добавить туда бота, получить `CHAT_ID` (например, через @userinfobot или getUpdates) | 🧑 | ☐ |
 | 1.2 | Задеплоить `worker/telegram-worker.js` в Cloudflare: `npx wrangler deploy` (или через дашборд Workers → Create → вставить код) | 🧑 | ☐ |
 | 1.3 | В настройках Worker → Settings → Variables добавить **secrets** `BOT_TOKEN` и `CHAT_ID` (никогда не в код/git) | 🧑 | ☐ |
+| 1.3б | **Email-уведомления** (запрошено владельцем, 2026-08; код готов, тесты 20/20): завести ZeptoMail (zeptomail.zoho.com, вход тем же Zoho-аккаунтом) → добавить домен `ithona.tj` → прописать выданные DKIM/верификационные DNS-записи → Mail Agent → Setup Info → скопировать **Send Mail Token** | 🧑 | ☐ |
+| 1.3в | Добавить в secrets Worker: `ZEPTO_TOKEN` (токен из 1.3б), `MAIL_FROM=noreply@ithona.tj`, `MAIL_TO=info@ithona.tj` (для европейского ДЦ Zoho — ещё `ZEPTO_URL=https://api.zeptomail.eu/v1.1/email`). Заявка уйдёт и в Telegram, и письмом; достаточно настроить любой один канал | 🧑 | ☐ |
 | 1.4 | Прислать URL Worker'а (вида `https://<имя>.<аккаунт>.workers.dev`) → вписать его в `CONTACTS.formEndpoint` в `assets/i18n.js`, поднять версию `i18n.js?v=6` во всех 6 HTML | 🤝 (URL — владелец, правка — Claude) | ☐ |
 | 1.5 | Включить Cloudflare Rate Limiting rule на маршрут Worker (например, 5 POST/мин с одного IP) — закрывает риск R1 | 🧑 | ☐ |
 | 1.6 | Контрольная заявка с прод-сайта → сообщение пришло в чат; проверить и ошибочный сценарий (выключить Worker → форма показывает понятную ошибку) | 🤝 | ☐ |
 
-**Критерий готовности:** заявка с it-hona.tj приходит в Telegram; `curl -X POST -H "Origin: https://evil.example"` получает 403; повторный спам режется rate-limit'ом.
+**Критерий готовности:** заявка с it-hona.tj приходит в Telegram **и письмом на info@ithona.tj**; `curl -X POST -H "Origin: https://evil.example"` получает 403; повторный спам режется rate-limit'ом.
 
 ---
 

@@ -2,9 +2,13 @@
 
 ## Архитектура
 
-Cloudflare Worker принимает `POST JSON` с сайта и шлёт сообщение в Telegram через `api.telegram.org/bot<BOT_TOKEN>/sendMessage`. Секреты — только в переменных окружения Worker (`BOT_TOKEN`, `CHAT_ID`), в коде/репозитории их **нет** (проверено сканом — см. 09_SECURITY_AUDIT.md).
+Cloudflare Worker принимает `POST JSON` с сайта и рассылает уведомления по настроенным каналам:
+- **Telegram** (`BOT_TOKEN`, `CHAT_ID`) — api.telegram.org/sendMessage;
+- **Email** (`ZEPTO_TOKEN`, `MAIL_FROM`, `MAIL_TO`, опц. `ZEPTO_URL`) — ZeptoMail (транзакционная почта Zoho), добавлен по запросу владельца 2026-08.
 
-## Проверки (15 unit-тестов, Telegram API мокается)
+Каналы независимы и шлются параллельно; `{ok:true}` — если доставил хотя бы один; ни один не настроен — 500 `not_configured`. Секреты — только в переменных окружения Worker, в коде/репозитории их **нет** (проверено сканом — см. 09_SECURITY_AUDIT.md).
+
+## Проверки (20 unit-тестов, внешние API мокаются)
 
 | Проверка | Результат |
 |---|---|
@@ -23,6 +27,11 @@ Cloudflare Worker принимает `POST JSON` с сайта и шлёт со�
 | **Чужой браузерный Origin → 403 до обработки** (добавлено в аудите) | PASS |
 | **Honeypot `website` на сервере → «успех» без отправки** (добавлено) | PASS |
 | **Payload > 64KB → 413** (добавлено) | PASS |
+| Email-канал: письмо на MAIL_TO через ZeptoMail (Authorization, from/to, subject с именем) | PASS |
+| Оба канала настроены → уходит и в Telegram, и на почту | PASS |
+| Telegram упал, письмо дошло → `{ok:true}` (частичная деградация) | PASS |
+| Все каналы упали → 502 без утечки деталей | PASS |
+| Ни один канал не настроен → 500 `not_configured` | PASS |
 
 Успех определяется по `tg.ok && out.ok` (не только по факту fetch) — корректно. `disable_web_page_preview: true` — ссылки пользователя не разворачиваются в превью. Таймаут: Cloudflare сам ограничивает время выполнения Worker; бесконечного зависания нет (fetch → catch → 502).
 

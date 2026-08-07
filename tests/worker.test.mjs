@@ -9,6 +9,7 @@ import assert from 'node:assert/strict';
 const worker = (await import('../worker/telegram-worker.js')).default;
 
 const ENV = { BOT_TOKEN: 'TEST_TOKEN_NOT_REAL', CHAT_ID: '42' };
+const ENV_MAIL = { ZEPTO_TOKEN: 'TEST_ZEPTO_KEY_NOT_REAL', MAIL_FROM: 'noreply@ithona.tj', MAIL_TO: 'info@ithona.tj' };
 const ORIGIN = 'https://it-hona.tj';
 
 // мок Telegram API
@@ -26,14 +27,14 @@ beforeEach(() => {
   };
 });
 
-const post = (body, headers = {}) =>
+const post = (body, headers = {}, env = ENV) =>
   worker.fetch(
     new Request('https://worker.test/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Origin: ORIGIN, ...headers },
       body: typeof body === 'string' ? body : JSON.stringify(body),
     }),
-    ENV,
+    env,
   );
 
 test('OPTIONS: preflight отвечает CORS-заголовками без вызова Telegram', async () => {
@@ -120,7 +121,59 @@ test('сеть до Telegram упала → 502 {ok:false}', async () => {
   globalThis.fetch = async () => { throw new Error('network down'); };
   const res = await post({ name: 'A', contact: 'B' });
   assert.equal(res.status, 502);
-  assert.equal((await res.json()).error, 'network');
+  assert.equal((await res.json()).error, 'delivery');
+});
+
+// ---------- email-канал (ZeptoMail) ----------
+
+test('email-канал: заявка уходит письмом на MAIL_TO через ZeptoMail', async () => {
+  const res = await post({ name: 'Худоёр', contact: '+992900000000', message: 'Тест' }, {}, ENV_MAIL);
+  assert.equal(res.status, 200);
+  assert.deepEqual(await res.json(), { ok: true });
+  assert.equal(tgCalls.length, 1);
+  assert.match(tgCalls[0].url, /api\.zeptomail\.com\/v1\.1\/email/);
+  assert.match(tgCalls[0].init.headers.Authorization, /^Zoho-enczapikey /);
+  const sent = JSON.parse(tgCalls[0].init.body);
+  assert.equal(sent.to[0].email_address.address, 'info@ithona.tj');
+  assert.equal(sent.from.address, 'noreply@ithona.tj');
+  assert.match(sent.subject, /Худоёр/);
+  assert.match(sent.textbody, /\+992900000000/);
+});
+
+test('оба канала настроены → уходит и в Telegram, и на почту', async () => {
+  const res = await post({ name: 'A', contact: 'B' }, {}, { ...ENV, ...ENV_MAIL });
+  assert.equal(res.status, 200);
+  assert.equal(tgCalls.length, 2);
+  const urls = tgCalls.map((c) => c.url).join(' ');
+  assert.match(urls, /api\.telegram\.org/);
+  assert.match(urls, /zeptomail/);
+});
+
+test('Telegram упал, но письмо доставлено → { ok: true }', async () => {
+  globalThis.fetch = async (url, init) => {
+    if (String(url).includes('telegram')) throw new Error('tg down');
+    tgCalls.push({ url: String(url), init });
+    return new Response(JSON.stringify({}), { status: 201 });
+  };
+  const res = await post({ name: 'A', contact: 'B' }, {}, { ...ENV, ...ENV_MAIL });
+  assert.equal(res.status, 200);
+  assert.deepEqual(await res.json(), { ok: true });
+});
+
+test('все каналы упали → 502, понятная ошибка без деталей', async () => {
+  globalThis.fetch = async () => { throw new Error('all down'); };
+  const res = await post({ name: 'A', contact: 'B' }, {}, { ...ENV, ...ENV_MAIL });
+  assert.equal(res.status, 502);
+  const j = await res.json();
+  assert.equal(j.ok, false);
+  assert.ok(!JSON.stringify(j).includes('all down'));
+});
+
+test('ни один канал не настроен → 500 not_configured', async () => {
+  const res = await post({ name: 'A', contact: 'B' }, {}, {});
+  assert.equal(res.status, 500);
+  assert.equal((await res.json()).error, 'not_configured');
+  assert.equal(tgCalls.length, 0);
 });
 
 test('CORS: чужой Origin не получает свой ACAO', async () => {

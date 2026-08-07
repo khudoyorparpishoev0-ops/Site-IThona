@@ -1,14 +1,26 @@
 /* ============================================================
-   IT-HONA — приём заявок с сайта и отправка их в Telegram.
+   IT-HONA — приём заявок с сайта и рассылка уведомлений.
    Разворачивается как Cloudflare Worker.
 
-   Переменные окружения (задаются в настройках Worker, не в коде):
+   Каналы доставки (каждый включается своими переменными окружения,
+   задаются в настройках Worker как secrets, НЕ в коде):
+
+   Telegram:
      BOT_TOKEN — токен бота от @BotFather
      CHAT_ID   — id чата или группы, куда слать заявки
 
-   Ответ соответствует контракту, который ждёт assets/main.js:
-     { ok: true }             — заявка доставлена
-     { ok: false, error: … }  — не доставлена, сайт покажет ошибку
+   Email (ZeptoMail — транзакционная почта Zoho):
+     ZEPTO_TOKEN — Send Mail Token из ZeptoMail (Mail Agent → Setup Info)
+     MAIL_FROM   — отправитель с домена, верифицированного в ZeptoMail,
+                   например noreply@ithona.tj
+     MAIL_TO     — куда слать уведомления, например info@ithona.tj
+     ZEPTO_URL   — (необязательно) API-хост; по умолчанию
+                   https://api.zeptomail.com/v1.1/email
+                   (для европейского ДЦ — https://api.zeptomail.eu/v1.1/email)
+
+   Заявка считается доставленной ({ ok: true }), если её принял
+   ХОТЯ БЫ ОДИН настроенный канал; { ok: false, error: … } — если все
+   каналы не сработали (сайт покажет пользователю ошибку).
    ============================================================ */
 
 const ALLOWED_ORIGINS = [
@@ -71,25 +83,52 @@ export default {
     if (data.message) lines.push('', 'Сообщение:', cut(data.message, 1500));
     if (data.page)    lines.push('', 'Страница: ' + cut(data.page, 120));
 
-    try {
-      const tg = await fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: env.CHAT_ID,
-          text: lines.join('\n'),
-          disable_web_page_preview: true,
-        }),
-      });
-      const out = await tg.json().catch(() => ({}));
-      // успех только если Telegram подтвердил доставку
-      if (!tg.ok || !out.ok) return reply({ ok: false, error: 'telegram' }, 502, cors);
-      return reply({ ok: true }, 200, cors);
-    } catch {
-      return reply({ ok: false, error: 'network' }, 502, cors);
-    }
+    const text = lines.join('\n');
+    const channels = [];
+    if (env.BOT_TOKEN && env.CHAT_ID) channels.push(sendTelegram(env, text));
+    if (env.ZEPTO_TOKEN && env.MAIL_FROM && env.MAIL_TO) channels.push(sendEmail(env, name, text));
+    if (!channels.length) return reply({ ok: false, error: 'not_configured' }, 500, cors);
+
+    // каналы шлём параллельно; доставлено = успех хотя бы одного
+    const results = await Promise.allSettled(channels);
+    const delivered = results.some((r) => r.status === 'fulfilled' && r.value === true);
+    if (delivered) return reply({ ok: true }, 200, cors);
+    return reply({ ok: false, error: 'delivery' }, 502, cors);
   },
 };
+
+// Telegram: успех только если API подтвердил доставку
+async function sendTelegram(env, text) {
+  const tg = await fetch(`https://api.telegram.org/bot${env.BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: env.CHAT_ID,
+      text,
+      disable_web_page_preview: true,
+    }),
+  });
+  const out = await tg.json().catch(() => ({}));
+  return tg.ok && out.ok === true;
+}
+
+// Email через ZeptoMail (Zoho). Тело — plain text, как и в Telegram.
+async function sendEmail(env, name, text) {
+  const token = env.ZEPTO_TOKEN.startsWith('Zoho-enczapikey')
+    ? env.ZEPTO_TOKEN
+    : 'Zoho-enczapikey ' + env.ZEPTO_TOKEN;
+  const res = await fetch(env.ZEPTO_URL || 'https://api.zeptomail.com/v1.1/email', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: token },
+    body: JSON.stringify({
+      from: { address: env.MAIL_FROM, name: 'Сайт IT-HONA' },
+      to: [{ email_address: { address: env.MAIL_TO } }],
+      subject: 'Новая заявка с сайта — ' + name,
+      textbody: text,
+    }),
+  });
+  return res.ok;
+}
 
 function reply(body, status, cors) {
   return new Response(JSON.stringify(body), {
