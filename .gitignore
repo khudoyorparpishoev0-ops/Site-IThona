@@ -1,0 +1,15 @@
+# Приватные ключи и секреты — не должны попадать в репозиторий ни при каких условиях
+id_ed25519*
+id_rsa*
+id_ecdsa*
+*.pem
+*.key
+*.ppk
+known_hosts*
+.env
+.env.*
+
+# Служебные файлы систем
+.DS_Store
+Thumbs.db
+desktop.ini
