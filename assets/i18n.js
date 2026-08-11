@@ -14,7 +14,7 @@ const CONTACTS = {
   //  • Formspree: вставьте свой URL вида "https://formspree.io/f/xxxxxxx" — заявки будут
   //    приходить на почту БЕЗ открытия WhatsApp (регистрация на formspree.io, 1 минута).
   //  Любой endpoint, принимающий POST с JSON, тоже подойдёт.
-  formEndpoint: "",
+  formEndpoint: "https://formspree.io/f/mbgropbn",
   // рабочие часы (по локальному времени пользователя, 24ч формат)
   workHours: { startHour: 9, endHour: 18, workDays: [1,2,3,4,5] } // Пн–Пт
 };

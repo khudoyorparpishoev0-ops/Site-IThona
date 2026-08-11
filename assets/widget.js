@@ -140,7 +140,8 @@
     if(!rateOk()){ return; }
 
     // Структурированные данные заявки (для backend) + текст (для WhatsApp/Telegram)
-    const payload = { kind: kind==='message' ? 'Заявка' : 'Обратный звонок', name, phone, page: location.pathname };
+    const payload = { kind: kind==='message' ? 'Заявка' : 'Обратный звонок', name, phone, page: location.pathname,
+      _subject: 'Заявка с сайта IT-HONA — ' + name };
     let lines = [];
     if(kind==='message'){
       lines.push('IT-HONA — заявка');

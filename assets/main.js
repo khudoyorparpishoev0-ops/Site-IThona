@@ -153,7 +153,12 @@
           const res = await fetch(CT.formEndpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({ name, contact, email, message, page: location.pathname })
+            body: JSON.stringify({
+              name, contact, message, page: location.pathname,
+              // если контакт похож на почту — подставляем её как обратный адрес письма
+              email: email || (/\S+@\S+\.\S+/.test(contact) ? contact : ''),
+              _subject: 'Заявка с сайта IT-HONA — ' + name
+            })
           });
           let ok = res.ok;
           // если сервер ответил JSON — верим его вердикту (в т.ч. по доставке SMS)
