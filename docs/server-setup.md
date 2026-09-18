@@ -1,7 +1,7 @@
 # Развёртывание сайта IT-HONA на новом сервере
 
 Пошаговая инструкция: от чистой Ubuntu до работающего сайта с HTTPS и защитой.
-Проверено на Ubuntu 22.04. Занимает около 30 минут.
+Проверено на Ubuntu 22.04 и Debian 13. Занимает около 30 минут.
 
 Порядок шагов важен: защита включается **последней**, чтобы не потерять доступ
 посреди настройки.
@@ -34,7 +34,7 @@ ssh root@NEW_IP
 
 ```bash
 apt update && apt upgrade -y
-apt install -y nginx git rsync curl
+apt install -y nginx git rsync curl ufw
 timedatectl set-timezone Asia/Dushanbe
 ```
 
@@ -257,8 +257,9 @@ sshd -T | grep -E 'passwordauthentication|permitrootlogin'
 ```bash
 ufw default deny incoming
 ufw default allow outgoing
-ufw allow OpenSSH
-ufw allow 'Nginx Full'
+ufw limit 22/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
 ufw --force enable
 ufw status verbose
 ```
@@ -293,7 +294,7 @@ if [ $(echo "$V4" | grep -c '/') -lt 5 ]; then
   echo "ОШИБКА: список Cloudflare не загрузился — правила не меняю"
 else
   for ip in $V4 $V6; do ufw allow from $ip to any port 80,443 proto tcp; done
-  ufw delete allow 'Nginx Full'
+  ufw delete allow 80/tcp; ufw delete allow 443/tcp
   ufw status
 fi
 ```
